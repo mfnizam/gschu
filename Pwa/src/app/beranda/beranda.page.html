@@ -1,0 +1,72 @@
+
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar class="bg-none text-on-primary">
+    <ion-title>
+      Hallo AM
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="primary" class="absolute top-0 left-0 drop-shadow-md z-0" [style.opacity]="tollbarOpacity"></ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="relative" scrollEvents="true" (ionScroll)="scroll($event)">
+  <div class="h-full overfow-y-auto">
+    <div class="absolute w-full bg-primary-gradation" style="height: 240px; z-index: -1; border-radius: 0 0 50% 50%; width: 150vw; left: -25vw; top: 0;"></div>
+    <!-- <div class="absolute w-full" style="height: 150vw;width: 180px;z-index: -1;border-radius: 150vw;width: 150vw;left: 45vw;top: -110vw;background: white;opacity: 0.1;"></div> -->
+    <!-- <div class="absolute w-full" style="height: 150vw;width: 180px;z-index: -1;border-radius: 150vw;width: 150vw;left: 15vw;top: -110vw;background: white;opacity: 0.1;"></div> -->
+    
+    
+    <div class="ion-margin-bottom ion-padding-start ion-padding-end ion-padding-top rounded-bl-xl rounded-br-xl">
+      <div class="bg-background drop-shadow-md ion-padding rounded-lg flex items-center gap-3">
+        <div class="bg-primary-10 overflow-hidden" style="height: 50px; width: 50px; border-radius: 100%;">
+          <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" class="h-full object-cover">
+        </div>
+        <div class="flex-1">
+          <h6 class="ion-no-margin"><b>Mohamad Iskandar</b></h6>
+          <div>0 Permintaan</div>
+        </div>
+        <div class="flex rounded-full ion-no-margin" style="font-size: 24pt;">
+          <ion-icon color="primary" name="file-tray-full-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div class="ion-padding-start ion-padding-end">
+      <h4 class="text-on-primary">Pilih Permintaan Baru</h4>
+      <div class="grid grid-cols-2 gap-5">
+        <div *ngFor="let m of menu" [routerLink]="m.route" [queryParams]="m.queryParams" class="rounded-lg p-2 drop-shadow-md flex items-center gap-3 bg-background">
+          <div class="p-2 rounded-xl rounded-lg bg-primary-gradation text-on-primary">
+            <h2 class="ion-no-margin flex"><ion-icon [name]="m.icon"></ion-icon></h2>
+          </div>
+          <small>{{m.nama}}</small>
+        </div>
+      </div>
+    </div>
+    <div class="ion-padding-start ion-padding-end ion-padding-bottom">
+      <h4>Permintaan Terakhir</h4>
+      <div *ngFor="let r of ['home', 'beer', 'desktop', 'football']" class="rounded-lg ion-padding ion-margin-bottom border-l bg-background drop-shadow-md border-t-3 border-primary">
+        <div class="flex items-center ion-margin-bottom">
+          <div class="flex-1">
+            <small class="opacity-50">Jenis Permintaan</small>
+            <div><b>Perbaikan AC</b></div>
+          </div>
+          <div class="bg-primary-gradation text-on-primary p-2 rounded-xl rounded-lg">
+            <h4 class="ion-no-margin flex"><ion-icon [name]="r + '-outline'"></ion-icon></h4>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <div class="flex-1">
+            <small class="opacity-50">Fungsi</small>
+            <div class="ion-no-margin"><b>PO</b></div>
+          </div>
+          <div class="text-right">
+            <small class="opacity-50">Tgl Permintaan</small>
+            <div class="ion-no-margin"><b>03-04-2022</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar mode="md" color="primary">
+    <ion-buttons slot="start" class="-mr-4">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Tambah Permintann
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="">
+  <div class="min-h-full">
+    <form [formGroup]="permintaanForm" id="permintaanForm" (submit)="kirim(permintaanForm.value)">
+      <div class="ion-padding relative">
+        <div class="mb-2"><ion-text [color]="permintaanForm.get('wilayahKerja').invalid && permintaanForm.get('wilayahKerja').dirty? 'danger' : ''">Pilih Wilayah Kerja</ion-text></div>
+        <ion-radio-group formControlName="wilayahKerja">
+          <div class="grid grid-cols-2 gap-3">
+            <ion-item fill="outline" lines="none" class="flex-1 ion-no-padding item-rounded overflow-hidden" style="--inner-padding-end: 0;" [style.--border-color]="permintaanForm.get('wilayahKerja').value == 'zona'? 'var(--ion-color-primary)' : ''">
+              <div class="ion-padding flex items-center gap-2 w-full h-full" [ngClass]="{'bg-primary-10 text-primary' : permintaanForm.get('wilayahKerja').value == 'zona'}">
+                <ion-radio slot="start" color="primary" value="zona" class="ion-no-margin shrink-0"></ion-radio>
+                <div class="flex-1 truncate">HO Zona 1</div>
+              </div>
+            </ion-item>
+            <ion-item fill="outline" lines="none" class="flex-1 ion-no-padding item-rounded overflow-hidden" style="--inner-padding-end: 0;" [style.--border-color]="permintaanForm.get('wilayahKerja').value == 'field'? 'var(--ion-color-primary)' : ''">
+              <div class="ion-padding flex items-center gap-2 w-full h-full" [ngClass]="{'bg-primary-10 text-primary' : permintaanForm.get('wilayahKerja').value == 'field'}">
+                <ion-radio slot="start" color="primary" value="field" class="ion-no-margin shrink-0"></ion-radio>
+                <div class="flex-1 truncate">Field Jambi</div>
+              </div>
+            </ion-item>
+          </div>
+        </ion-radio-group>
+        <ion-text *ngIf="permintaanForm.get('wilayahKerja').invalid && permintaanForm.get('wilayahKerja').dirty" color="danger" class="absolute bottom-0 -mb-1">
+          <small>Pilih wilayah kerja terlebih dahulu</small>
+        </ion-text>
+      </div>
+      <hr class="ion-margin-start ion-margin-end bg-light-shade">
+      <ion-list>
+        <ion-item fill="outline" mode="md" class="ion-margin-start ion-margin-end item-rounded">
+          <ion-label position="floating">Nama Lengkap</ion-label>
+          <ion-input formControlName="nama" placeholder="Tulis Nama Anda" class="pb-0"></ion-input>
+        </ion-item>
+        <ion-item fill="outline" mode="md" class="ion-margin item-rounded">
+          <ion-label position="floating">Kontak / No HP (WA)</ion-label>
+          <ion-input formControlName="kontak" type="number" placeholder="Tulis No HP (WA) yang dapat dihubungi" class="pb-0"></ion-input>
+        </ion-item>
+        <div class="relative ion-margin autocomplete-input">
+          <ion-item fill="outline" mode="md" class="item-rounded">
+            <ion-label position="floating">Jabatan</ion-label>
+            <ion-input formControlName="jabatan" placeholder="Cari dan Pilih Jabatan Anda" class="pb-0"></ion-input>
+          </ion-item>
+          <div class="autocomplete absolute left-0 w-full bg-background border rounded-md z-50 hidden" style="top: 66px; box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);">
+            <div *ngIf="acDataJabatan && acDataJabatan.length > 0; else noAcDataJabatan">
+              <div *ngFor="let ad of acDataJabatan" class="ion-padding border-b" (click)="pilihJabatan(ad.id, ad.nama)">{{ad.nama}}</div>
+            </div>
+            <ng-template #noAcDataJabatan>
+              <div class="ion-padding opacity-50">
+                Tidak Ada Data Jabatan{{permintaanForm.get('wilayahKerja').value? '' : ', Pilih Wilayah Kerja Terlebih Dahulu'}}
+              </div>
+            </ng-template>
+          </div>
+        </div>
+        <div class="relative ion-margin autocomplete-input">
+          <ion-item fill="outline" mode="md" class="item-rounded">
+            <ion-label position="floating">Fungsi</ion-label>
+            <ion-input formControlName="fungsi" placeholder="Pilih Fungsi" class="pb-0"></ion-input>
+            <!-- <ion-select formControlName="fungsi" mode="ios" interface="popover" placeholder="Pilih Fungsi Request" class="pb-1 w-full max-w-full">
+              <ion-select-option value="FM">FM</ion-select-option>
+              <ion-select-option value="PO">PO</ion-select-option>
+              <ion-select-option value="PE">PE</ion-select-option>
+              <ion-select-option value="WS">WS</ion-select-option>
+              <ion-select-option value="RAM">RAM</ion-select-option>
+              <ion-select-option value="HSSE">HSSE</ion-select-option>
+              <ion-select-option value="Finance">Finance</ion-select-option>
+              <ion-select-option value="SCM">SCM</ion-select-option>
+              <ion-select-option value="LR">LR</ion-select-option>
+              <ion-select-option value="HC">HC</ion-select-option>
+            </ion-select> -->
+          </ion-item>
+          <div class="overflow-y-auto keep-scroll autocomplete absolute left-0 w-full bg-background border rounded-md z-50 hidden" style="height: 180px; top: 66px; box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);">
+            <div class="">
+              <!-- <div class="ion-padding border-b" (click)="pilihJabatan(ad.id, ad.nama)">{{ad.nama}}</div> -->
+              <div *ngFor="let df of acDataFungsi" class="ion-padding border-b" (click)="pilihFungsi(df.id)">{{df.nama}}</div>
+            </div>
+          </div>
+        </div>
+        <ion-item fill="outline" mode="md" class="ion-margin item-rounded">
+          <ion-label position="floating">Alamat RDP / Fasum</ion-label>
+          <ion-input formControlName="alamatRdp" placeholder="Tulis Alamat RDP / Fasum" class="pb-0"></ion-input>
+        </ion-item>
+        <ion-item fill="outline" mode="md" class="ion-margin item-rounded">
+          <ion-label position="floating">Jenis Perbaikan</ion-label>
+          <ion-input formControlName="jenisPerbaikan" placeholder="Pilih Jenis Perbaikan" class="pb-0"></ion-input>
+        </ion-item>
+        <ion-item fill="outline" mode="md" class="ion-margin item-rounded">
+          <ion-label position="floating">Keterangan Singkat Kerusakan</ion-label>
+          <ion-input formControlName="keterangan" placeholder="Jelaskan secara singkat kerusakan yang sedang terjadi" class="pb-0"></ion-input>
+        </ion-item>
+      </ion-list>
+      <div class="ion-padding-start ion-padding-end">
+        <ion-button mode="ios" color="primary" form="permintaanForm" class="w-full">Kirim Permintaan</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

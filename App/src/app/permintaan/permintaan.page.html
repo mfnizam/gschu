@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar mode="md" color="primary">
+    <ion-buttons slot="start" class="-mr-4">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Tambah Permintann
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="">
+  <div class="ion-padding min-h-full">
+    <form [formGroup]="permintaanForm" id="permintaanForm" (submit)="kirim()">
+      <div class="ion-margin-bottom">
+        <div class="mb-1">Pilih Kantor</div>
+        <ion-radio-group formControlName="kantor">
+          <div class="grid grid-cols-2 gap-3">
+            <ion-item fill="outline" lines="none" class="flex-1 ion-no-padding item-rounded overflow-hidden" style="--inner-padding-end: 0;" [style.--border-color]="permintaanForm.get('kantor').value == 'zona'? 'var(--ion-color-primary)' : ''">
+              <div class="ion-padding flex flex-col w-full h-full">
+                <ion-radio slot="start" color="primary" value="zona" class="ion-no-margin shrink-0"></ion-radio>
+                <div class="flex-1 mt-2 truncate-2" [ngClass]="{'text-primary font-bold' : permintaanForm.get('kantor').value == 'zona'}">PT Pertamina Hulu Rokan Zona 1</div>
+              </div>
+            </ion-item>
+            <ion-item fill="outline" lines="none" class="flex-1 ion-no-padding item-rounded overflow-hidden" style="--inner-padding-end: 0;" [style.--border-color]="permintaanForm.get('kantor').value == 'field'? 'var(--ion-color-primary)' : ''">
+              <div class="ion-padding flex flex-col w-full h-full">
+                <ion-radio slot="start" color="primary" value="field" class="ion-no-margin shrink-0"></ion-radio>
+                <div class="flex-1 mt-2 truncate-2" [ngClass]="{'text-primary font-bold' : permintaanForm.get('kantor').value == 'field'}">PT Pertamina EP Field Jambi</div>
+              </div>
+            </ion-item>
+          </div>
+        </ion-radio-group>
+      </div>
+      <hr class="bg-light-shade">
+      <ion-list class="bg-none">
+        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
+          <ion-label position="floating">Nama</ion-label>
+          <ion-input placeholder="Tulis Nama Anda" class="pb-0"></ion-input>
+        </ion-item>
+        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
+          <ion-label position="floating">Kontak / No HP (WA)</ion-label>
+          <ion-input placeholder="Tulis No HP (WA) yang dapat dihubungi" class="pb-0"></ion-input>
+        </ion-item>
+        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
+          <ion-label position="floating">Jabatan</ion-label>
+          <ion-input placeholder="Cari dan Pilih Jabatan Anda" class="pb-0"></ion-input>
+        </ion-item>
+        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
+          <ion-label position="floating">Fungsi</ion-label>
+          <ion-input placeholder="Pilih Fungsi Request" class="pb-0"></ion-input>
+        </ion-item>
+        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
+          <ion-label position="floating">Alamat RDP / Fasum</ion-label>
+          <ion-input placeholder="Tulis Alamat RDP / Fasum" class="pb-0"></ion-input>
+        </ion-item>
+        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
+          <ion-label position="floating">Jenis Perbaikan</ion-label>
+          <ion-input placeholder="Pilih Jenis Perbaikan" class="pb-0"></ion-input>
+        </ion-item>
+        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
+          <ion-label position="floating">Keterangan Singkat Kerusakan</ion-label>
+          <ion-input placeholder="Jelaskan secara singkat kerusakan yang sedang terjadi" class="pb-0"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-button mode="ios" color="primary" form="permintaanForm" class="w-full">Kirim Permintaan</ion-button>
+    </form>
+  </div>
+</ion-content>

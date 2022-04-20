@@ -1,0 +1,7 @@
+{
+	"appId": "com.mfnizam.haloam",
+	"appName": "Halo AM",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"backgroundColor": "#00000000"
+}

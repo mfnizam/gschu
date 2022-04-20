@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:forceDarkAllowed="false"
+        android:id="@+id/b_splash"
+        android:drawable="@color/colorPrimary"/>
+    <item
+        android:forceDarkAllowed="false">
+        <bitmap
+            android:gravity="center"
+            android:forceDarkAllowed="false"
+            android:src="@mipmap/ic_launcher_foreground"/>
+    </item>
+</layer-list>
