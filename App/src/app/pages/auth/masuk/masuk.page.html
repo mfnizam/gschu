@@ -1,0 +1,55 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>masuk</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-padding">
+  <div class="flex justify-between">
+    <div><img src="assets/icon/GSCHU-Logo.webp" class="h-full object-cover" style="height:30px;"></div>
+    <div class="font-bold text-rdp" style="font-size:24px;">Daftar</div>
+  </div>
+  <h2 class="font-bold" style="font-size:40px;">Masuk Ke <br>Akun Kamu</h2>
+<style>
+  ion-item{
+    --background: var(--ion-color-light-tint-costom);
+    border-radius: 0.75rem;
+    --border-color: var(--ion-color-light-tint-costom);
+
+  }
+  ion-input{
+    outline: none; 
+    -webkit-appearance: none; 
+    box-shadow: none !important; 
+    border: none !important;
+  }
+  
+
+
+</style>
+
+<ion-item  lines="none">
+  <ion-icon name="mail" style="position: absolute; bottom: 12px;"></ion-icon>
+  <ion-label style="margin-left: 40px;" position="floating">Floating Label</ion-label>
+  <ion-input placeholder="Email" class="-mb-2" style="margin-left: 40px;"></ion-input>
+  <!-- <ion-icon slot="end" [name]="showPassword? 'eye-off' : 'eye'" (click)="showPassword = !showPassword"></ion-icon> -->
+</ion-item>  
+<ion-item  lines="none" class="mt-4">
+  <ion-icon name="key" style="position: absolute; bottom: 12px;"></ion-icon>
+  <ion-label style="margin-left: 40px; top:20px" position="floating">Floating Label</ion-label>
+  <ion-input placeholder="Password" style="margin-left: 40px;"></ion-input>
+  <ion-icon slot="end" [name]="showPassword? 'eye-off' : 'eye'" (click)="showPassword = !showPassword"></ion-icon>
+</ion-item>
+
+<ion-list class="bg-none ion-margin-bottom">
+  <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl ">
+    <ion-icon name="mail" style="position: absolute; bottom: 14px;"></ion-icon>
+    <ion-label style="margin-left: 40px;" position="floating">Email</ion-label>
+    <ion-input style="margin-left: 40px;"  class="-mb-2 ion-text-capitalize"></ion-input>
+  </ion-item>
+</ion-list>
+
+<ion-button color="rdp">Primary</ion-button>
+
+
+</ion-content>

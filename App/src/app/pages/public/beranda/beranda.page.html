@@ -1,0 +1,196 @@
+
+<ion-header class="ion-no-border" [translucent]="true">
+  <!-- <ion-toolbar color="primary" class="absolute top-0 left-0 drop-shadow-md z-0" [style.opacity]="tollbarOpacity"></ion-toolbar> -->
+</ion-header>
+<ion-content [fullscreen]="true" class="relative" scrollEvents="true" (ionScroll)="scroll($event)">
+  <div class="bg-none text-on-primary flex justify-between ion-padding-top ion-padding-bottom">
+    <ion-title>
+      <img src="assets/logo.png" class="h-full object-cover" style="height:20px;">
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon class="text-medium" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <div class="h-full overfow-y-auto">
+    <div class="absolute w-full bg-header" style="height: 240px; z-index: -1; border-radius: 0 0 50% 50%; width: 150vw; left: -25vw; top: 0;"></div>
+    <!-- <div class="absolute w-full" style="height: 150vw;width: 180px;z-index: -1;border-radius: 150vw;width: 150vw;left: 45vw;top: -110vw;background: white;opacity: 0.1;"></div> -->
+    <!-- <div class="absolute w-full" style="height: 150vw;width: 180px;z-index: -1;border-radius: 150vw;width: 150vw;left: 15vw;top: -110vw;background: white;opacity: 0.1;"></div> -->
+    
+    
+    <div class="ion-margin-bottom ion-padding-start ion-padding-end rounded-bl-xl rounded-br-xl">
+      <div class="bg-background drop-shadow-md ion-padding rounded-lg flex items-center gap-3">
+        <div class="bg-primary-10 overflow-hidden" style="height: 50px; width: 50px; border-radius: 100%;">
+          <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" class="h-full object-cover">
+        </div>
+        <div class="flex-1">
+          <h6 class="ion-no-margin"><b>Mohamad Iskandar</b></h6>
+          <div>0 Permintaan</div>
+        </div>
+        <!-- <div class="flex rounded-full ion-no-margin" style="font-size: 24pt;">
+          <ion-icon color="primary" name="file-tray-full-outline"></ion-icon>
+        </div> -->
+      </div>
+    </div>
+    <div class="ion-padding-start ion-padding-end">
+      <h4 class="font-bold">Pilih Permintaan Baru</h4>
+      <div class="grid grid-cols-2 gap-5">
+        <!-- <div *ngFor="let m of menu" [routerLink]="m.route" [queryParams]="m.queryParams" class="rounded-lg p-2 drop-shadow-md flex items-center gap-3 bg-background">
+          <div class="p-2 rounded-xl rounded-lg bg-primary-rdp text-on-primary">
+            <h2 class="ion-no-margin flex"><ion-icon [name]="m.icon"></ion-icon></h2>
+          </div>
+          <small>{{m.nama}}</small> 
+        </div> -->
+        <div class="rounded-lg p-2 drop-shadow-md flex items-center text-on-primary font-bold bg-primary-rdp">
+          <div class="p-2 flex items-center justify-center" style="width:44px; height:40px;">
+            <div class="ion-no-margin flex justify-center">
+              <img src="assets/icon/1rdp.png" style="max-width:28px; max-height: 28px;">
+            </div>
+          </div>
+          <small class="leading-3">
+            Perbaikan RDP & Fasum
+          </small>
+        </div>
+        <div class="rounded-lg p-2 drop-shadow-md flex items-center text-on-primary font-bold bg-primary-furniture">
+          <div class="p-2 flex items-center justify-center" style="width:44px; height:40px;">
+            <div class="ion-no-margin flex justify-center">
+              <img src="assets/icon/2furniture.png" style="max-width:28px; max-height: 28px;">
+            </div>
+          </div>
+          <small class="leading-3">
+            Furniture & Perabotan
+          </small>
+        </div>
+        <div class="rounded-lg p-2 drop-shadow-md flex items-center text-on-primary font-bold bg-primary-rumput">
+          <div class="p-2 flex items-center justify-center" style="width:44px; height:40px;">
+            <div class="ion-no-margin flex justify-center">
+              <img src="assets/icon/3rumput.png" style="max-width:28px; max-height: 28px;">
+            </div>
+          </div>
+          <small class="leading-3">
+            Potong Rumput Tebang Pohon
+          </small>
+        </div>
+        <div class="rounded-lg p-2 drop-shadow-md flex items-center text-on-primary font-bold bg-primary-ac">
+          <div class="p-2 flex items-center justify-center" style="width:44px; height:40px;">
+            <div class="ion-no-margin flex justify-center">
+              <img src="assets/icon/4ac.png" style="max-width:28px; max-height: 28px;">
+            </div>
+          </div>
+          <small class="leading-3">
+            Perawatan & Perbaikan AC
+          </small>
+        </div>
+        <div class="rounded-lg p-2 drop-shadow-md flex items-center text-on-primary font-bold bg-primary-atk">
+          <div class="p-2 flex items-center justify-center" style="width:44px; height:40px;">
+            <div class="ion-no-margin flex justify-center">
+              <img src="assets/icon/5atk.png" style="max-width:28px; max-height: 28px;">
+            </div>
+          </div>
+          <small class="leading-3">
+            Alat Tulis <br> Kantor
+          </small>
+        </div>
+        <div class="rounded-lg p-2 drop-shadow-md flex items-center text-on-primary font-bold bg-primary-snack">
+          <div class="p-2 flex items-center justify-center" style="width:44px; height:40px;">
+            <div class="ion-no-margin flex justify-center">
+              <img src="assets/icon/6snack.png" style="max-width:28px; max-height: 28px;">
+            </div>
+          </div>
+          <small class="leading-3">
+            Snack & Makanan Berat
+          </small>
+        </div>
+        <div class="rounded-lg p-2 drop-shadow-md flex items-center text-on-primary font-bold bg-primary-krp">
+          <div class="p-2 flex items-center justify-center" style="width:44px; height:40px;">
+            <div class="ion-no-margin flex justify-center">
+              <img src="assets/icon/7krp.png" style="max-width:28px; max-height: 28px;">
+            </div>
+          </div>
+          <small class="leading-3">
+            K. Ringan Penumpang
+          </small>
+        </div>
+        <div class="rounded-lg p-2 drop-shadow-md flex items-center text-on-primary font-bold bg-primary-mess">
+          <div class="p-2 flex items-center justify-center" style="width:44px; height:40px;">
+            <div class="ion-no-margin flex justify-center">
+              <img src="assets/icon/8mess.png" style="max-width:28px; max-height: 28px;">
+            </div>
+          </div>
+          <small class="leading-3">
+            Mess / <br> Penginapan
+          </small>
+        </div>
+        <div class="rounded-lg p-2 drop-shadow-md flex items-center text-on-primary font-bold bg-primary-dokumen">
+          <div class="p-2 flex items-center justify-center" style="width:44px; height:40px;">
+            <div class="ion-no-margin flex justify-center">
+              <img src="assets/icon/9dokumen.png" style="max-width:28px; max-height: 28px;">
+            </div>
+          </div>
+          <small class="leading-3">
+            Pengiriman Dokumen
+          </small>
+        </div>
+        <div class="rounded-lg p-2 drop-shadow-md flex items-center text-on-primary font-bold bg-primary-galon">
+          <div class="p-2 flex items-center justify-center" style="width:44px; height:40px;">
+            <div class="ion-no-margin flex justify-center">
+              <img src="assets/icon/10galon.png" style="max-width:28px; max-height: 28px;">
+            </div>
+          </div>
+          <small class="leading-3">
+           Air Mineral <br>(Galon)
+         </small>
+       </div>
+       <div class="rounded-lg p-2 drop-shadow-md flex items-center text-on-primary font-bold bg-primary-acara">
+        <div class="p-2 flex items-center justify-center" style="width:44px; height:40px;">
+          <div class="ion-no-margin flex justify-center">
+            <img src="assets/icon/11acara.png" style="max-width:28px; max-height: 28px;">
+          </div>
+        </div>
+          <small class="leading-3">
+          Penyiapan <br>Acara
+        </small>
+      </div>
+      <div class="rounded-lg p-2 drop-shadow-md flex items-center text-on-primary font-bold bg-primary-lampu ">
+        <div class="p-2 flex items-center justify-center" style="width:44px; height:40px;">
+          <div class="ion-no-margin flex justify-center">
+            <img src="assets/icon/12lampu.png" style="max-width:28px; max-height: 28px;">
+          </div>
+        </div>
+          <small class="leading-3">
+          Peralatan (Lampu Kebersihan)
+        </small>
+      </div>
+    </div>
+  </div>
+  <div class="ion-padding-start ion-padding-end ion-padding-bottom ion-padding-top">
+    <div class="flex justify-between items-center">
+      <h4 class="font-bold">Permintaan Terakhir Kamu</h4>
+      <small class="text-medium">Lihat Semua</small>
+    </div>
+    <div class="rounded-lg ion-padding ion-margin-bottom border-l bg-background drop-shadow-custom">
+      <div class="flex items-center ion-margin-bottom">
+        <div class="flex-1">
+          <small class="text-medium">Jenis Permintaan</small>
+          <div class=" font-bold">Perbaikan AC</div>
+        </div>
+        <div class="bg-primary-rdp text-on-primary p-2 rounded-xl rounded-lg">
+          <h4 class="ion-no-margin flex"><img src="assets/icon/1rdp.png" style="max-width:20px; max-height: 20px;"></h4>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <div class="flex-1">
+          <small class="text-medium">Status</small>
+          <div class="ion-no-margin font-bold">Menunggu Persetujuan</div>
+        </div>
+        <div class="text-right">
+          <small class="text-medium">Tgl Permintaan</small>
+          <div class="ion-no-margin font-bold">03-04-2022</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</ion-content>
