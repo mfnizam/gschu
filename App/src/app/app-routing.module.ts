@@ -5,6 +5,9 @@ const routes: Routes = [
   {
     path: 'masuk',
     loadChildren: () => import('./pages/auth/masuk/masuk.module').then( m => m.MasukPageModule)
+  },{
+    path: 'daftar',
+    loadChildren: () => import('./pages/auth/daftar/daftar.module').then( m => m.DaftarPageModule)
   }, {
     path: 'permintaan',
     loadChildren: () => import('./pages/public/permintaan/permintaan.module').then( m => m.PermintaanPageModule)
@@ -15,6 +18,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: ''
   }
+
 
 ];
 
