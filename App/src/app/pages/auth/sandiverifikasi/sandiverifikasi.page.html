@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border drop-shadow-sm">
+	<ion-toolbar>
+		<ion-title class="font-bold">Lupa Kata Sandi</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" >
+	<div class="flex items-center justify-center ion-margin-bottom w-full" style="margin-top:80px;">
+		<img src="assets/auth/verifikasi.png" class="h-full object-cover">
+	</div>
+	<div class="w-full text-center ion-margin-bottom">
+		<div class="text-grey font-bold text-sm">Masukan Kode Verifikasi.</div>	
+	</div>
+	<div class="flex justify-center items-center w-full ">
+		<ion-list class="bg-none custom-input-biasa flex gap-2">
+			<ion-item class="ion-margin-bottom ">
+				<ion-input type="number"></ion-input>
+			</ion-item>
+			<ion-item class="ion-margin-bottom ">
+				<ion-input type="number"></ion-input>
+			</ion-item>
+			<ion-item class="ion-margin-bottom ">
+				<ion-input type="number"></ion-input>
+			</ion-item>
+			<ion-item class="ion-margin-bottom ">
+				<ion-input type="number"></ion-input>
+			</ion-item>
+		</ion-list>
+	</div>
+
+
+	<div class="w-full text-center ion-margin-bottom">
+		<small class="text-rdp font-bold">Kirim Lagi 30 Detik</small>	
+	</div>
+
+
+
+</ion-content>
+<ion-toolbar class="pr-4 pl-4">
+	<button type="submit" class="w-full ion-margin-bottom bg-primary-rdp text-on-primary flex items-center justify-center text-center rounded-2xl ion-padding relative">
+		<h6 class="ion-no-margin font-bold">Verifikasi</h6>
+		<!-- <ion-spinner [class.opacity-0]="!isLoading" color="light" class="absolute"></ion-spinner> -->
+	</button>
+</ion-toolbar>

@@ -277,6 +277,7 @@
 .object-right { object-position: right; }
 
 // Shadow
+.drop-shadow-sm {filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));}
 .drop-shadow-md	{ filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06)); }
 .drop-shadow-lg	{ filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)); }
 .drop-shadow-xl	{ filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08)); }
@@ -332,7 +333,20 @@
 
 
 
+.custom-input-biasa{
+	width: 250px;
+	color: var(--ion-color-light-tint-costom);
+    ion-item{
+      --background: var(--ion-color-light-tint-costom);
+      --border-color: var(--ion-color-rdp);
 
+    }
+
+    ion-input{
+	font-size: 30pt;
+	text-align: center;
+    }
+}
 .custom-input{
 	color: var(--ion-color-light-tint-costom);
     ion-item{

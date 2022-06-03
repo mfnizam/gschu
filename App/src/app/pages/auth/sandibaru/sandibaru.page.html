@@ -1,0 +1,40 @@
+<ion-header class="ion-no-border drop-shadow-sm">
+	<ion-toolbar>
+		<ion-title class="font-bold">Kata Sandi Baru Kamu</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" >
+	<div class="flex items-center justify-center ion-margin-bottom w-full" style="margin-top:80px;">
+		<img src="assets/auth/pass-baru.png" class="h-full object-cover">
+	</div>
+	<div class="w-full text-center ion-margin-bottom">
+		<div class="text-grey font-bold text-sm">Masukan Kata Sandi Baru Kamu.</div>	
+	</div>
+	<ion-list class="bg-none  custom-input input-rdp">
+
+		<ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl ">
+			<ion-icon name="key" color="grey" style="position: absolute; bottom: 14px;"></ion-icon>
+			<ion-label color="grey" style="margin-left: 40px;" position="floating">Kata Sandi Baru</ion-label>
+			<ion-input style="margin-left: 40px;"  class="-mb-2 ion-text-capitalize"></ion-input>
+			<ion-icon slot="end" color="grey" [name]="showPassword? 'eye-off' : 'eye'" (click)="showPassword = !showPassword"></ion-icon>
+		</ion-item>
+		<ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl ">
+			<ion-icon name="key" color="grey" style="position: absolute; bottom: 14px;"></ion-icon>
+			<ion-label color="grey" style="margin-left: 40px;" position="floating">Konfirmasi Kata Sandi</ion-label>
+			<ion-input style="margin-left: 40px;"  class="-mb-2 ion-text-capitalize"></ion-input>
+			<ion-icon slot="end" color="grey" [name]="showPassword? 'eye-off' : 'eye'" (click)="showPassword = !showPassword"></ion-icon>
+		</ion-item>
+	</ion-list>
+
+
+
+
+
+</ion-content>
+<ion-toolbar class="pr-4 pl-4">
+	<button type="submit" class="w-full ion-margin-bottom bg-primary-rdp text-on-primary flex items-center justify-center text-center rounded-2xl ion-padding relative">
+		<h6 class="ion-no-margin font-bold">Simpan Kata Sandi</h6>
+		<!-- <ion-spinner [class.opacity-0]="!isLoading" color="light" class="absolute"></ion-spinner> -->
+	</button>
+</ion-toolbar>
