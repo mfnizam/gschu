@@ -21,6 +21,9 @@ const routes: Routes = [
     path: 'sandipemberitahuan',
     loadChildren: () => import('./pages/auth/sandipemberitahuan/sandipemberitahuan.module').then( m => m.SandipemberitahuanPageModule)
   },{
+    path: 'biodata',
+    loadChildren: () => import('./pages/public/biodata/biodata.module').then( m => m.BiodataPageModule)
+  },{
     path: 'permintaan',
     loadChildren: () => import('./pages/public/permintaan/permintaan.module').then( m => m.PermintaanPageModule)
   },{
@@ -30,6 +33,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: ''
   }
+
 
 
 

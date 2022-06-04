@@ -9,13 +9,13 @@
 		<img src="assets/auth/lupa-sandi.png" class="h-full object-cover">
 	</div>
 	<div class="w-full text-center ion-margin-bottom">
-		<div class="text-grey font-bold text-sm">Masukan Alamat Email Kamu Untuk<br>Mengirim Kode Verifikasi.</div>	
+		<div class="text-medium font-bold text-sm">Masukan Alamat Email Kamu Untuk<br>Mengirim Kode Verifikasi.</div>	
 	</div>
 	<ion-list class="bg-none  custom-input input-rdp">
-		<ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl ">
-			<ion-icon name="mail" color="grey" style="position: absolute; bottom: 14px;"></ion-icon>
-			<ion-label color="grey" style="margin-left: 40px;" position="floating">Email</ion-label>
-			<ion-input style="margin-left: 40px;"  class="-mb-2 ion-text-capitalize"></ion-input>
+		<ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+			<ion-icon slot="start" name="mail" color="medium"></ion-icon>
+			<ion-label color="medium" style="" position="floating">Email</ion-label>
+			<ion-input class="-mb-2 ion-text-capitalize"></ion-input>
 		</ion-item>
 	</ion-list>
 
@@ -25,7 +25,7 @@
 
 </ion-content>
 <ion-toolbar class="pr-4 pl-4">
-	<button type="submit" class="w-full ion-margin-bottom bg-primary-rdp text-on-primary flex items-center justify-center text-center rounded-2xl ion-padding relative">
+	<button type="submit" class="w-full ion-margin-bottom bg-primary-rdp text-on-primary flex items-center justify-center text-center rounded-2xl ion-padding relative" routerLink="/sandiverifikasi">
 		<h6 class="ion-no-margin font-bold">Kirim Email</h6>
 		<!-- <ion-spinner [class.opacity-0]="!isLoading" color="light" class="absolute"></ion-spinner> -->
 	</button>

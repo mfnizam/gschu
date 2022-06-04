@@ -1,68 +1,91 @@
-<ion-header>
-  <ion-toolbar mode="md" color="primary">
+<ion-header class="ion-no-border drop-shadow-sm">
+  <ion-toolbar>
     <ion-buttons slot="start" class="-mr-4">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>
-      Tambah Permintann
+    <ion-title class="font-bold">
+      Tambah Permintaan
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="">
-  <div class="ion-padding min-h-full">
-    <form [formGroup]="permintaanForm" id="permintaanForm" (submit)="kirim()">
-      <div class="ion-margin-bottom">
-        <div class="mb-1">Pilih Kantor</div>
-        <ion-radio-group formControlName="kantor">
-          <div class="grid grid-cols-2 gap-3">
-            <ion-item fill="outline" lines="none" class="flex-1 ion-no-padding item-rounded overflow-hidden" style="--inner-padding-end: 0;" [style.--border-color]="permintaanForm.get('kantor').value == 'zona'? 'var(--ion-color-primary)' : ''">
-              <div class="ion-padding flex flex-col w-full h-full">
-                <ion-radio slot="start" color="primary" value="zona" class="ion-no-margin shrink-0"></ion-radio>
-                <div class="flex-1 mt-2 truncate-2" [ngClass]="{'text-primary font-bold' : permintaanForm.get('kantor').value == 'zona'}">PT Pertamina Hulu Rokan Zona 1</div>
-              </div>
-            </ion-item>
-            <ion-item fill="outline" lines="none" class="flex-1 ion-no-padding item-rounded overflow-hidden" style="--inner-padding-end: 0;" [style.--border-color]="permintaanForm.get('kantor').value == 'field'? 'var(--ion-color-primary)' : ''">
-              <div class="ion-padding flex flex-col w-full h-full">
-                <ion-radio slot="start" color="primary" value="field" class="ion-no-margin shrink-0"></ion-radio>
-                <div class="flex-1 mt-2 truncate-2" [ngClass]="{'text-primary font-bold' : permintaanForm.get('kantor').value == 'field'}">PT Pertamina EP Field Jambi</div>
-              </div>
-            </ion-item>
-          </div>
-        </ion-radio-group>
-      </div>
-      <hr class="bg-light-shade">
-      <ion-list class="bg-none">
-        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
-          <ion-label position="floating">Nama</ion-label>
-          <ion-input placeholder="Tulis Nama Anda" class="pb-0"></ion-input>
-        </ion-item>
-        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
-          <ion-label position="floating">Kontak / No HP (WA)</ion-label>
-          <ion-input placeholder="Tulis No HP (WA) yang dapat dihubungi" class="pb-0"></ion-input>
-        </ion-item>
-        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
-          <ion-label position="floating">Jabatan</ion-label>
-          <ion-input placeholder="Cari dan Pilih Jabatan Anda" class="pb-0"></ion-input>
-        </ion-item>
-        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
-          <ion-label position="floating">Fungsi</ion-label>
-          <ion-input placeholder="Pilih Fungsi Request" class="pb-0"></ion-input>
-        </ion-item>
-        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
-          <ion-label position="floating">Alamat RDP / Fasum</ion-label>
-          <ion-input placeholder="Tulis Alamat RDP / Fasum" class="pb-0"></ion-input>
-        </ion-item>
-        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
-          <ion-label position="floating">Jenis Perbaikan</ion-label>
-          <ion-input placeholder="Pilih Jenis Perbaikan" class="pb-0"></ion-input>
-        </ion-item>
-        <ion-item fill="outline" mode="md" class="border-lg ion-margin-bottom item-rounded">
-          <ion-label position="floating">Keterangan Singkat Kerusakan</ion-label>
-          <ion-input placeholder="Jelaskan secara singkat kerusakan yang sedang terjadi" class="pb-0"></ion-input>
-        </ion-item>
-      </ion-list>
-      <ion-button mode="ios" color="primary" form="permintaanForm" class="w-full">Kirim Permintaan</ion-button>
-    </form>
+<ion-content class="ion-padding">
+  <div class="font-bold text-rdp mb-2">Perbaikan RDP & Fasum</div>
+  <div>
+    <ion-list class="bg-none pb-0 custom-input input-rdp">
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" style="" position="floating">Nama Lengkap</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" style="" position="floating">Email</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" style="" position="floating">Nomer Pegawai</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl ">
+        <ion-label color="medium" style="" position="floating">Nomer HP</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+    </ion-list>
   </div>
+  <div class="w-full ion-margin-bottom"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+
+  <!-- FORM RDP =============================================================== -->
+  <div>
+    <ion-list class="bg-none pb-0 custom-input input-rdp">
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" style="" position="floating">Alamat RDP / Fasum</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" style="" position="floating">Tanggal Perbaikan</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+    </ion-list>
+    <!-- loop=================================== -->
+    <div class="bg-background rounded-lg drop-shadow-custom ion-padding ion-margin-bottom">
+      <div class="font-bold mb-2">Perbaikan RDP & Fasum</div>
+      <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+      <div id="wilayah-kerja" class="w-full bg-light-tint-costom ion-margin-bottom p-3 rounded-2xl text-medium">
+        <div class="bg-on-primary rounded-xl flex items-center pl-3 pr-3 pt-2 pb-2 justify-between">
+          <div>Jenis Kerusakan</div>
+          <div><ion-icon name="chevron-down" class="text-3xl flex items-center"></ion-icon></div>
+        </div>
+      </div>
+      <div id="" class="w-full bg-light-tint-costom ion-margin-bottom p-3 rounded-2xl text-medium">
+        <div class="bg-on-primary rounded-xl flex items-center pl-3 pr-3 pt-2 pb-2 justify-between">
+          <div>Foto Kerusakan</div>
+          <div><ion-icon name="camera" class="text-3xl flex items-center"></ion-icon></div>
+        </div>
+      </div>
+      <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+      <div id="wilayah-kerja" class="w-full bg-light-tint-costom ion-margin-bottom p-3 rounded-2xl text-medium">
+        <div class="bg-on-primary rounded-xl flex items-center pl-3 pr-3 pt-2 pb-2 justify-between">
+          <div>Jenis Kerusakan</div>
+          <div><ion-icon name="chevron-down" class="text-3xl flex items-center"></ion-icon></div>
+        </div>
+      </div>
+      <div id="" class="w-full bg-light-tint-costom ion-margin-bottom p-3 rounded-2xl text-medium">
+        <div class="bg-on-primary rounded-xl flex items-center pl-3 pr-3 pt-2 pb-2 justify-between">
+          <div>Foto Kerusakan</div>
+          <div><ion-icon name="camera" class="text-3xl flex items-center"></ion-icon></div>
+        </div>
+      </div>
+      <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+      <div class="font-bold mb-2 text-rdp text-center">+ Tambah Jenis Perbaikan</div>      
+    </div>
+
+    <ion-list class="bg-none pb-0 custom-input input-rdp textarea-rdp mb-4">
+      <ion-item>
+        <ion-textarea placeholder="Catatan..."></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </div>
+  <button type="submit" class="w-full ion-margin-bottom bg-primary-rdp text-on-primary flex items-center justify-center text-center rounded-2xl ion-padding relative" routerLink="/biodata">
+    <h6 class="ion-no-margin font-bold">Daftar</h6>
+    <!-- <ion-spinner [class.opacity-0]="!isLoading" color="light" class="absolute"></ion-spinner> -->
+  </button>
 </ion-content>
