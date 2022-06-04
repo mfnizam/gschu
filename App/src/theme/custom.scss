@@ -21,6 +21,7 @@
 // Size 
 .w-full { width: 100%; }
 .w-auto { width: auto; }
+.w-1-2{ width: 50%; }
 .w-4 { width: 1rem; }
 .w-6 { width: 1.5rem; }
 .w-8 { width: 2rem; }
@@ -418,6 +419,91 @@
       background-color: var(--ion-color-rdp) ;
     }
 }
-.textarea-rdp ion-item {
-	// --highlight-height: 0px;
+.input-furniture{
+	ion-item{
+      --highlight-background:var(--ion-color-furniture);
+    }
+    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
+      background-color: var(--ion-color-furniture) ;
+    }
+}
+.input-rumput{
+	ion-item{
+      --highlight-background:var(--ion-color-rumput);
+    }
+    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
+      background-color: var(--ion-color-rumput) ;
+    }
+}
+.input-ac{
+	ion-item{
+      --highlight-background:var(--ion-color-ac);
+    }
+    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
+      background-color: var(--ion-color-ac) ;
+    }
+}
+.input-atk{
+	ion-item{
+      --highlight-background:var(--ion-color-atk);
+    }
+    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
+      background-color: var(--ion-color-rdp) ;
+    }
+}
+.input-krp{
+	ion-item{
+      --highlight-background:var(--ion-color-krp);
+    }
+    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
+      background-color: var(--ion-color-krp) ;
+    }
+}
+.input-snack{
+	ion-item{
+      --highlight-background:var(--ion-color-snack);
+    }
+    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
+      background-color: var(--ion-color-snack) ;
+    }
+}
+.input-mess{
+	ion-item{
+      --highlight-background:var(--ion-color-mess);
+    }
+    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
+      background-color: var(--ion-color-mess) ;
+    }
+}
+.input-dokumen{
+	ion-item{
+      --highlight-background:var(--ion-color-dokumen);
+    }
+    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
+      background-color: var(--ion-color-dokumen) ;
+    }
+}
+.input-galon{
+	ion-item{
+      --highlight-background:var(--ion-color-galon);
+    }
+    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
+      background-color: var(--ion-color-galon) ;
+    }
+}
+.input-acara{
+	ion-item{
+      --highlight-background:var(--ion-color-acara);
+    }
+    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
+      background-color: var(--ion-color-acara) ;
+    }
+}
+.input-lampu{
+	ion-item{
+      --highlight-background:var(--ion-color-lampu);
+    }
+    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
+      background-color: var(--ion-color-lampu) ;
+    }
 }

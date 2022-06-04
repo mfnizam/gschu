@@ -15,26 +15,26 @@
     <ion-list class="bg-none pb-0 custom-input input-rdp">
       <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
         <ion-label color="medium" position="floating">Nama Lengkap</ion-label>
-        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+        <ion-input class="-mb-2 ion-text-capitalize" value="ojiel"></ion-input>
       </ion-item>
       <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
         <ion-label color="medium" position="floating">Email</ion-label>
-        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+        <ion-input class="-mb-2 ion-text-capitalize" value="ojiel@anal.com"></ion-input>
       </ion-item>
       <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
         <ion-label color="medium" position="floating">Nomer Pegawai</ion-label>
-        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+        <ion-input class="-mb-2 ion-text-capitalize"value="4578245"></ion-input>
       </ion-item>
       <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl ">
         <ion-label color="medium" position="floating">Nomer HP</ion-label>
-        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+        <ion-input class="-mb-2 ion-text-capitalize" value="0850979865"></ion-input>
       </ion-item>
     </ion-list>
   </div>
   <div class="w-full ion-margin-bottom"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
 
   <!-- FORM RDP =============================================================== -->
-  <div>
+  <!-- <div>
     <ion-list class="bg-none pb-0 custom-input input-rdp">
       <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
         <ion-label color="medium" position="floating">Alamat RDP / Fasum</ion-label>
@@ -46,7 +46,8 @@
         <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
       </ion-item>
     </ion-list>
-    <!-- loop=================================== -->
+
+
     <div class="bg-background rounded-lg drop-shadow-custom ion-padding ion-margin-bottom">
       <div class="font-bold mb-2">Perbaikan RDP & Fasum</div>
       <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
@@ -84,7 +85,262 @@
         <ion-textarea placeholder="Catatan..."></ion-textarea>
       </ion-item>
     </ion-list>
+  </div> -->
+
+  <!-- FORM furniture =============================================================== -->
+  <!-- <div>
+    <ion-list class="bg-none pb-0 custom-input input-furniture">
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" position="floating">Alamat Pengiriman Furniture </ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-icon slot="start" name="calendar" color="medium"></ion-icon>
+        <ion-label color="medium" position="floating">Tanggal Diperlukan</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+    </ion-list>
+
+
+    <div class="bg-background rounded-lg drop-shadow-custom ion-padding ion-margin-bottom">
+      <div class="font-bold mb-2">Permintaan Furniture</div>
+      <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+      <div id="wilayah-kerja" class="w-full bg-light-tint-costom ion-margin-bottom p-3 rounded-2xl text-medium">
+        <div class="bg-on-primary rounded-xl flex items-center pl-3 pr-3 pt-2 pb-2 justify-between">
+          <div>Nama Furniture</div>
+          <div><ion-icon name="chevron-down" class="text-3xl flex items-center"></ion-icon></div>
+        </div>
+      </div>
+      <ion-list class="bg-none pb-0 custom-input input-furniture flex justify-between gap-3">
+        <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+          <ion-label color="medium" position="floating" class="text-center">Jumlah</ion-label>
+          <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+        </ion-item>
+        <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+          <ion-label color="medium" position="floating" class="text-center">Satuan</ion-label>
+          <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+        </ion-item>
+      </ion-list>
+      <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+      <div id="wilayah-kerja" class="w-full bg-light-tint-costom ion-margin-bottom p-3 rounded-2xl text-medium">
+        <div class="bg-on-primary rounded-xl flex items-center pl-3 pr-3 pt-2 pb-2 justify-between">
+          <div>Nama Furniture</div>
+          <div><ion-icon name="chevron-down" class="text-3xl flex items-center"></ion-icon></div>
+        </div>
+      </div>
+      <ion-list class="bg-none pb-0 custom-input input-furniture flex justify-between gap-3">
+        <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+          <ion-label color="medium" position="floating" class="text-center">Jumlah</ion-label>
+          <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+        </ion-item>
+        <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+          <ion-label color="medium" position="floating" class="text-center">Satuan</ion-label>
+          <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+        </ion-item>
+      </ion-list>
+      <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+      <div class="font-bold mb-2 text-furniture text-center">+ Tambah Furniture</div>      
+    </div>
+
+    <ion-list class="bg-none pb-0 custom-input input-rdp textarea-rdp mb-4">
+      <ion-item  fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-textarea placeholder="Catatan..."></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </div> -->
+
+
+  <!-- FORM rumput =============================================================== -->
+  <!-- <div>
+    <ion-list class="bg-none pb-0 custom-input input-rumput">
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-icon slot="start" name="calendar" color="medium"></ion-icon>
+        <ion-label color="medium" position="floating">Harapan Tanggal Pemotongan</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+    </ion-list>
+
+
+    <div class="bg-background rounded-lg drop-shadow-custom ion-padding ion-margin-bottom">
+      <div class="font-bold mb-2">Potong Rumput / Tebang Pohon</div>
+      <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+      <ion-list class="bg-none pb-0 custom-input input-rumput">
+        <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+          <ion-label color="medium" position="floating">Lokasi Rumput / Pohon </ion-label>
+          <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+        </ion-item>
+      </ion-list>
+      <div id="wilayah-kerja" class="w-full bg-light-tint-costom ion-margin-bottom p-3 rounded-2xl text-medium">
+        <div class="bg-on-primary rounded-xl flex items-center pl-3 pr-3 pt-2 pb-2 justify-between">
+          <div>Foto Lokasi Pohon / Rumput</div>
+          <div><ion-icon name="camera" class="text-3xl flex items-center"></ion-icon></div>
+        </div>
+      </div>
+      <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+      <ion-list class="bg-none pb-0 custom-input input-rumput">
+        <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+          <ion-label color="medium" position="floating">Lokasi Rumput / Pohon </ion-label>
+          <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+        </ion-item>
+      </ion-list>
+      <div id="wilayah-kerja" class="w-full bg-light-tint-costom ion-margin-bottom p-3 rounded-2xl text-medium">
+        <div class="bg-on-primary rounded-xl flex items-center pl-3 pr-3 pt-2 pb-2 justify-between">
+          <div>Foto Lokasi Pohon / Rumput</div>
+          <div><ion-icon name="camera" class="text-3xl flex items-center"></ion-icon></div>
+        </div>
+      </div>
+      <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+      <div class="font-bold mb-2 text-rumput text-center">+ Tambah Lokasi</div>      
+    </div>
+
+    <ion-list class="bg-none pb-0 custom-input input-rdp textarea-rdp mb-4">
+      <ion-item  fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-textarea placeholder="Catatan..."></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </div> -->
+
+
+  <!-- FORM ac =============================================================== -->
+  <!-- <div>
+    <ion-list class="bg-none pb-0 custom-input input-ac">
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" position="floating">Lokasi AC</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-icon slot="start" name="calendar" color="medium"></ion-icon>
+        <ion-label color="medium" position="floating">Tanggal Perawatan & Perbaikan</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+    </ion-list>
+
+
+    <div class="bg-background rounded-lg drop-shadow-custom ion-padding ion-margin-bottom">
+      <div class="font-bold mb-2">Perawatan & Perbaikan AC</div>
+      <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+      <div id="wilayah-kerja" class="w-full bg-light-tint-costom ion-margin-bottom p-3 rounded-2xl text-medium">
+        <div class="bg-on-primary rounded-xl flex items-center pl-3 pr-3 pt-2 pb-2 justify-between">
+          <div>Jenis Kerusakan</div>
+          <div><ion-icon name="chevron-down" class="text-3xl flex items-center"></ion-icon></div>
+        </div>
+      </div>
+      <div id="" class="w-full bg-light-tint-costom ion-margin-bottom p-3 rounded-2xl text-medium">
+        <div class="bg-on-primary rounded-xl flex items-center pl-3 pr-3 pt-2 pb-2 justify-between">
+          <div>Foto Kerusakan</div>
+          <div><ion-icon name="camera" class="text-3xl flex items-center"></ion-icon></div>
+        </div>
+      </div>
+      <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+      <div id="wilayah-kerja" class="w-full bg-light-tint-costom ion-margin-bottom p-3 rounded-2xl text-medium">
+        <div class="bg-on-primary rounded-xl flex items-center pl-3 pr-3 pt-2 pb-2 justify-between">
+          <div>Jenis Kerusakan</div>
+          <div><ion-icon name="chevron-down" class="text-3xl flex items-center"></ion-icon></div>
+        </div>
+      </div>
+      <div id="" class="w-full bg-light-tint-costom ion-margin-bottom p-3 rounded-2xl text-medium">
+        <div class="bg-on-primary rounded-xl flex items-center pl-3 pr-3 pt-2 pb-2 justify-between">
+          <div>Foto Kerusakan</div>
+          <div><ion-icon name="camera" class="text-3xl flex items-center"></ion-icon></div>
+        </div>
+      </div>
+      <div class="w-full mb-4"><hr style="border-top: 2px solid var(--ion-color-light) !important; width: 100%;"></div>
+      <div class="font-bold mb-2 text-ac text-center">+ Tambah Jenis Kerusakan</div>      
+    </div>
+
+    <ion-list class="bg-none pb-0 custom-input input-rdp textarea-rdp mb-4">
+      <ion-item  fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-textarea placeholder="Catatan..."></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </div> -->
+
+
+  <!-- FORM snack =============================================================== -->
+  <div>
+    <ion-list class="bg-none pb-0 custom-input input-snack">
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" position="floating">Judul Rapat / Kegiatan</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" position="floating">Tempat Rapat / Kegiatan</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" position="floating">Jumlah Peserta</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-icon slot="start" name="calendar" color="medium"></ion-icon>
+        <ion-label color="medium" position="floating">Tanggal Pelaksanaan</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="bg-background rounded-2xl border ion-padding ion-margin-bottom text-medium">
+      <div>Pengambilan</div>
+      <ion-list class="p-0">
+        <ion-radio-group value="diantar" class="flex justify-between">
+          <ion-item lines="none">
+            <ion-label color="medium">Diantar</ion-label>
+            <ion-radio slot="start" value="diantar" color="snack" class="mr-2"></ion-radio>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label color="medium">Diambil Sendiri</ion-label>
+            <ion-radio slot="start" value="diambilSendiri" color="snack" class="mr-2"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div class="bg-background rounded-2xl border ion-padding ion-margin-bottom text-medium">
+      <div>Perihal</div>
+      <ion-list class="p-0 flex justify-between flex-wrap">
+        <ion-item lines="none" class="w-1-2">
+          <ion-checkbox slot="start" color="snack" class="mr-2"></ion-checkbox>
+          <ion-label color="medium">Snack Pagi</ion-label>
+        </ion-item>
+        <ion-item lines="none" class="w-1-2">
+          <ion-checkbox slot="start" color="snack" class="mr-2"></ion-checkbox>
+          <ion-label color="medium">Makan Siang</ion-label>
+        </ion-item>
+        <ion-item lines="none" class="w-1-2">
+          <ion-checkbox slot="start" color="snack" class="mr-2"></ion-checkbox>
+          <ion-label color="medium">Snack Sore</ion-label>
+        </ion-item>
+        <ion-item lines="none" class="w-1-2">
+          <ion-checkbox slot="start" color="snack" class="mr-2"></ion-checkbox>
+          <ion-label color="medium">Makan Malam</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    <ion-list class="bg-none pb-0 custom-input input-snack">
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" position="floating">Cost Center</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" position="floating">G/L. Acount</ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+      <ion-item fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-label color="medium" position="floating">PIC Kegiatan </ion-label>
+        <ion-input class="-mb-2 ion-text-capitalize"></ion-input>
+      </ion-item>
+    </ion-list>
+ 
+
+    <ion-list class="bg-none pb-0 custom-input input-snack textarea-snack mb-4">
+      <ion-item  fill="outline" class="ion-margin-bottom item-rounded-2xl">
+        <ion-textarea placeholder="Catatan..."></ion-textarea>
+      </ion-item>
+    </ion-list>
   </div>
+
+
+
+
+
+
   <button type="submit" class="w-full ion-margin-bottom bg-primary-rdp text-on-primary flex items-center justify-center text-center rounded-2xl ion-padding relative" routerLink="/">
     <h6 class="ion-no-margin font-bold">Tambah Permintaan</h6>
     <!-- <ion-spinner [class.opacity-0]="!isLoading" color="light" class="absolute"></ion-spinner> -->
