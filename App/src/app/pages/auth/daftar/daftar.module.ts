@@ -1,19 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DaftarPageRoutingModule } from './daftar-routing.module';
+import { Routes, RouterModule } from '@angular/router';
 
 import { DaftarPage } from './daftar.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: DaftarPage
+  }
+];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
-    DaftarPageRoutingModule
+    RouterModule.forChild(routes)
   ],
   declarations: [DaftarPage]
 })

@@ -1,0 +1,552 @@
+<ion-header class="ion-no-border drop-shadow-md">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="-mr-4">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-bold">
+      Detail Permintaan
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="!isLoading; else permintaanLoading">
+    <div *ngIf="permintaan as p; else noPermintaan">
+      <div class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="flex items-center justify-center">
+          <div [ngClass]="' text-' + p.kategori" class="bg-background border rounded-full overflow-hidden flex items-center justify-center"
+            style="height: 80px; width: 80px;" routerLink="/akun">
+            <b style="font-size: 24pt;">{{inisial}}</b>
+            <!-- <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+            class="h-full object-cover"> -->
+          </div>
+        </div>
+        <div class="text-center">
+          <h4 class="mb-0 mt-3 ion-text-capitalize"><b>{{user.namaLengkap}}</b></h4>
+          <div>{{user.jabatan}}</div>
+        </div>
+        <hr class="bg-light mt-2 mb-2">
+        <div class="flex items-start justify-between gap-3">
+          <div class="flex-1">
+            <small class="text-medium">No Tlp</small>
+            <div><b>{{user.kodeNoTlp}} {{user.noTlp}}</b></div>
+          </div>
+          <div class="flex-shrink-0 text-right">
+            <small class="text-medium">Fungsi</small>
+            <div><b>{{user.fungsi}}</b></div>
+          </div>
+        </div>
+        <hr class="bg-light mt-2 mb-2">
+        <div class="flex items-center justify-between gap-3 mb-2">
+          <div class="flex-1">
+            <small class="text-medium">Jenis Permintaan</small>
+            <div><b>{{p.nama}}</b></div>
+          </div>
+          <div [ngClass]="'bg-' + p.kategori" class="flex p-2 rounded-lg">
+            <img [src]="'assets/icon/' + p.kategori + '.png'" class="mb-px" style="max-width: 20px; max-height: 20px;">
+          </div>
+        </div>
+        <div class="flex items-start justify-between gap-3">
+          <div class="flex-1">
+            <small class="text-medium">Status</small>
+            <div><b>Menng. Persetujuan Atasan</b></div>
+          </div>
+          <div class="flex-shrink-0 text-right">
+            <small class="text-medium">Tgl Permintaan</small>
+            <div><b>{{p.createAt | date:'dd MMMM yyyy'}}</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DETAIL rdp =============================================================== -->
+      <div *ngIf="p.kategori == 'rdp'" class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="mb-2 -mt-1">
+          <small class="text-medium">Alamat RDP/Fasum</small>
+          <div class="ion-text-capitalize"><b>{{p.permintaan.alamat}}</b></div>
+        </div>
+        <div class="ion-margin-bottom">
+          <small class="text-medium">Tgl Pelaksanaan</small>
+          <div class="ion-text-capitalize"><b>{{p.permintaan.tgl | date:'dd MMMM yyyy'}}</b></div>
+        </div>
+        <div *ngFor="let pp of p.permintaan.perbaikan; let i = index;"
+          class="ion-padding border rounded-xl ion-margin-bottom">
+          <div class="-mt-1">
+            <small class="text-medium">Perbaikan {{i + 1}}</small>
+            <div class="mb-1"><b>{{pp.jenis}}</b></div>
+            <small class="text-medium">Foto Kerusakan 1</small>
+            <div class="w-full rounded-lg bg-light mt-1 flex items-center justify-center" style="height: 100px;">
+              <ion-icon name="image" class="text-light-shade" style="font-size: 30pt;"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <small class="text-medium">Catatan</small>
+          <div><b>{{p.permintaan.catatan || '-'}}</b></div>
+        </div>
+      </div>
+
+      <!-- DETAIL furniture =============================================================== -->
+      <div *ngIf="p.kategori == 'furniture'"
+        class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="mb-2 -mt-1">
+          <small class="text-medium">Alamat Pengiriman Furniture</small>
+          <div><b>{{p.permintaan.alamat}}</b></div>
+        </div>
+        <div class="ion-margin-bottom">
+          <small class="text-medium">Tgl Pengiriman</small>
+          <div><b>{{p.permintaan.tgl | date:'dd MMMM yyyy'}}</b></div>
+        </div>
+        <div *ngFor="let pf of p.permintaan.furniture" class="ion-padding border rounded-xl ion-margin-bottom flex justify-between">
+          <div class="-mt-1">
+            <small class="text-medium">Nama Furniture</small>
+            <div class=""><b>{{pf.nama}}</b></div>
+          </div>
+          <div class="text-right flex-shrink-0 -mt-1">
+            <small class="text-medium">Jumlah</small>
+            <div class="ion-text-capitalize"><b>{{pf.jumlah}} {{pf.satuan}}</b></div>
+          </div>
+        </div>
+        <div class="">
+          <small class="text-medium">Catatan</small>
+          <div><b>{{p.permintaan.catatan || '-'}}</b></div>
+        </div>
+      </div>
+
+      <!-- DETAIL rumput =============================================================== -->
+      <div *ngIf="p.kategori == 'rumput'" class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="mb-2 -mt-1">
+          <small class="text-medium">Tgl Pelaksanaan</small>
+          <div><b>{{p.permintaan.tgl | date:'dd MMMM yyyy'}}</b></div>
+        </div>
+        <div *ngFor="let pp of p.permintaan.pemotongan; let i = index;" class="ion-padding border rounded-xl ion-margin-bottom">
+          <div class="-mt-1">
+            <small class="text-medium">Lokasi Potong Rumput {{i + 1}}</small>
+            <div class="mb-1"><b>{{pp.lokasi}}</b></div>
+            <small class="text-medium">Foto Lookasi Potong Rumput {{i + 1}}</small>
+            <div class="w-full rounded-lg bg-light mt-1 flex items-center justify-center" style="height: 100px;">
+              <ion-icon name="image" class="text-light-shade" style="font-size: 30pt;"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <small class="text-medium">Catatan</small>
+          <div><b>{{p.permintaan.catatan || '-'}}</b></div>
+        </div>
+      </div>
+
+      <!-- DETAIL ac =============================================================== -->
+      <div *ngIf="p.kategori == 'ac'" class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="mb-2 -mt-1">
+          <small class="text-medium">Lokasi AC</small>
+          <div><b>{{p.permintaan.alamat}}</b></div>
+        </div>
+        <div class="ion-margin-bottom">
+          <small class="text-medium">Tgl Pelaksanaan</small>
+          <div><b>{{p.permintaan.tgl | date:'dd MMMM yyyy'}}</b></div>
+        </div>
+        <div *ngFor="let pk of p.permintaan.perbaikan; let i = index;" class="ion-padding border rounded-xl ion-margin-bottom">
+          <div class="-mt-1">
+            <small class="text-medium">Jenis Kerusakan {{i + 1}}</small>
+            <div class="mb-1"><b>{{pk.jenis}}</b></div>
+            <small class="text-medium">Foto Kerusakan  {{i + 1}}</small>
+            <div class="w-full rounded-lg bg-light mt-1 flex items-center justify-center" style="height: 100px;">
+              <ion-icon name="image" class="text-light-shade" style="font-size: 30pt;"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <small class="text-medium">Catatan</small>
+          <div><b>{{p.permintaan.catatan || '-'}}</b></div>
+        </div>
+      </div>
+
+      <!-- DETAIL atk =============================================================== -->
+      <div *ngIf="p.kategori == 'atk'" class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="mb-2 -mt-1">
+          <small class="text-medium">Lokasi Kerja</small>
+          <div><b>{{p.permintaan.alamat}}</b></div>
+        </div>
+        <div class="ion-margin-bottom">
+          <small class="text-medium">Tgl Pelaksanaan</small>
+          <div><b>{{p.permintaan.tgl | date:'dd MMMM yyyy'}}</b></div>
+        </div>
+        <div *ngFor="let pa of p.permintaan.atk" class="ion-padding border rounded-xl ion-margin-bottom flex justify-between">
+          <div class="-mt-1">
+            <small class="text-medium">Nama ATK</small>
+            <div><b>{{pa.nama}}</b></div>
+          </div>
+          <div class="text-right flex-shrink-0 -mt-1">
+            <small class="text-medium">Jumlah</small>
+            <div class="ion-text-capitalize"><b>{{pa.jumlah}} {{pa.satuan}}</b></div>
+          </div>
+        </div>
+        <div class="">
+          <small class="text-medium">Catatan</small>
+          <div><b>{{p.permintaan.catatan || '-'}}</b></div>
+        </div>
+      </div>
+
+      <!-- DETAIL snack =============================================================== -->
+      <div *ngIf="p.kategori == 'snack'" class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="flex justify-between">
+          <div class="mb-2 -mt-1">
+            <small class="text-medium">Judul Rapat / Kegiatan</small>
+            <div><b>{{p.permintaan.judul}}</b></div>
+          </div>
+          <div class="mb-2 -mt-1 text-right">
+            <small class="text-medium">Jumlah Peserta</small>
+            <div><b>{{p.permintaan.jumlah}} Orang</b></div>
+          </div>
+        </div>
+        <div class="ion-margin-bottom">
+          <small class="text-medium">Tgl Pelaksanaan</small>
+          <div><b>{{p.permintaan.tgl | date:'dd MMMM yyyy'}}</b></div>
+        </div>
+        <div class="ion-margin-bottom">
+          <small class="text-medium">Pengambilan</small>
+          <div class="ion-text-capitalize"><b>{{p.permintaan.pengambilan}}</b></div>
+        </div>
+        <div class="ion-margin-bottom">
+          <small class="text-medium">Perihal</small>
+          <div class="ion-text-capitalize"><b>{{p.permintaan.perihal}}</b></div>
+        </div>
+        <div class="flex justify-between">
+          <div class="mb-2 -mt-1">
+            <small class="text-medium">Cost Center</small>
+            <div><b>{{p.permintaan.costCenter || '-'}}</b></div>
+          </div>
+          <div class="mb-2 -mt-1 text-right">
+            <small class="text-medium">G/L. Account</small>
+            <div><b>{{p.permintaan.GLAccount || '-'}}</b></div>
+          </div>
+        </div>
+        <div class="ion-margin-bottom">
+          <small class="text-medium">PIC Kegiatan</small>
+          <div><b>{{p.permintaan.pic || '-'}}</b></div>
+        </div>
+        <div class="">
+          <small class="text-medium">Catatan</small>
+          <div><b>{{p.permintaan.catatan || '-'}}</b></div>
+        </div>
+      </div>
+
+      <!-- DETAIL krp =============================================================== -->
+      <div *ngIf="p.kategori == 'krp'" class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="flex justify-between">
+          <div class="mb-2 -mt-1">
+            <small class="text-medium">Tgl Keberangkatan</small>
+            <div><b>{{p.permintaan.tglKeberangkatan | date:'dd MMMM yyyy'}}</b></div>
+          </div>
+          <div class="mb-2 -mt-1 text-right">
+            <small class="text-medium">Tgl Kembali</small>
+            <div><b>{{p.permintaan.tglKembali | date:'dd MMMM yyyy'}}</b></div>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <div class="mb-2">
+            <small class="text-medium">Tempat Penjemputan</small>
+            <div><b>{{p.permintaan.tempatPenjemputan}}</b></div>
+          </div>
+          <div class="mb-2 text-right">
+            <small class="text-medium">Tempat Tujuan</small>
+            <div><b>{{p.permintaan.tempatTujuan}}</b></div>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <div class="mb-2">
+            <small class="text-medium">Jam Penjemputan</small>
+            <div><b>{{p.permintaan.waktuPenjemputan | date:'hh:mm'}}</b></div>
+          </div>
+          <div class="mb-2 text-right">
+            <small class="text-medium">Jumlah Penumpang</small>
+            <div><b>{{p.permintaan.jumlahPenumpang}} Orang</b></div>
+          </div>
+        </div>
+        <div class="ion-margin-bottom">
+          <small class="text-medium">Jenis Pelayanan</small>
+          <div class="ion-text-capitalize"><b>{{p.permintaan.jenisPelayanan}}</b></div>
+        </div>
+        <div class="">
+          <small class="text-medium">Catatan</small>
+          <div><b>{{p.permintaan.catatan || '-'}}</b></div>
+        </div>
+      </div>
+
+      <!-- DETAIL mess =============================================================== -->
+      <div *ngIf="p.kategori == 'mess'" class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="mb-2 -mt-1">
+          <small class="text-medium">Nama Penanggung Jawab</small>
+          <div><b>{{p.permintaan.penanggungJawab}}</b></div>
+        </div>
+        <div class="mb-2">
+          <small class="text-medium">Check In - Check Out</small>
+          <div><b>{{p.permintaan.checkIn | date:'dd MMMM yyyy'}} - {{p.permintaan.checkOut | date:'dd MMMM yyyy'}}</b></div>
+        </div>
+        <div class="flex justify-between">
+          <div class="mb-2">
+            <small class="text-medium">Jumlah Tamu</small>
+            <div><b>{{p.permintaan.jumlahTamu}} Orang</b></div>
+          </div>
+          <div class="mb-2 text-right">
+            <small class="text-medium">Jumlah Kamar</small>
+            <div><b>{{p.permintaan.jumlahKamar}} Kamar</b></div>
+          </div>
+        </div>
+        <div class="">
+          <small class="text-medium">Catatan</small>
+          <div><b>{{p.permintaan.catatan || '-'}}</b></div>
+        </div>
+      </div>
+
+      <!-- DETAIL dokumen =============================================================== -->
+      <div *ngIf="p.kategori == 'dokumen'"
+        class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="flex justify-between">
+          <div class="mb-2 -mt-1">
+            <small class="text-medium">Jenis Dokumen</small>
+            <div><b>{{p.permintaan.jenisDokumen}}</b></div>
+          </div>
+          <div class="mb-2 -mt-1 text-right">
+            <small class="text-medium">Tgl Pengiriman</small>
+            <div><b>{{p.permintaan.tglPengiriman | date:'dd MMMM yyyy'}}</b></div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="mb-2">
+            <small class="text-medium">Nama Pengirim</small>
+            <div class="ion-text-capitalize"><b>{{p.permintaan.namaPengirim}}</b></div>
+          </div>
+          <div class="mb-2 text-right">
+            <small class="text-medium">No Tlp Pengirim</small>
+            <div><b>{{p.permintaan.noTlpPengirim}}</b></div>
+          </div>
+        </div>
+        <div class="mb-2">
+          <small class="text-medium">Alamat Pengirim</small>
+          <div><b>{{p.permintaan.alamatPengirim}}</b></div>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-3">
+          <div class="mb-2">
+            <small class="text-medium">Nama Penerima</small>
+            <div class="ion-text-capitalize"><b>{{p.permintaan.namaPenerima}}</b></div>
+          </div>
+          <div class="mb-2 text-right">
+            <small class="text-medium">No Tlp Penerima</small>
+            <div><b>{{p.permintaan.noTlpPenerima}}</b></div>
+          </div>
+        </div>
+        <div class="mb-2">
+          <small class="text-medium">Alamat Penerima</small>
+          <div><b>{{p.permintaan.alamatPenerima}}</b></div>
+        </div>
+        <div class="">
+          <small class="text-medium">Catatan</small>
+          <div><b>{{p.permintaan.catatan || '-'}}</b></div>
+        </div>
+      </div>
+
+      <!-- DETAIL galon =============================================================== -->
+      <div *ngIf="p.kategori == 'galon'" class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="mb-2 -mt-1">
+          <small class="text-medium">Tempat Pengiriman</small>
+          <div><b>{{p.permintaan.lokasi}}</b></div>
+        </div>
+        <div class="mb-2">
+          <small class="text-medium">Waktu & Tgl Pengiriman</small>
+          <div><b>{{p.permintaan.waktu | date:'hh:mm'}} {{p.permintaan.tgl | date:'dd MMMM yyyy'}} </b></div>
+        </div>
+        <div class="flex justify-between">
+          <div class="mb-2">
+            <small class="text-medium">Jumlah Galon</small>
+            <div><b>{{p.permintaan.jumlah}} Galon</b></div>
+          </div>
+          <div class="mb-2 text-right">
+            <small class="text-medium">Pengambilan</small>
+            <div class="ion-text-capitalize"><b>{{p.permintaan.jenisPelayanan}}</b></div>
+          </div>
+        </div>
+        <div class="">
+          <small class="text-medium">Catatan</small>
+          <div><b>{{p.permintaan.catatan || '-'}}</b></div>
+        </div>
+      </div>
+
+      <!-- DETAIL acara =============================================================== -->
+      <div *ngIf="p.kategori == 'acara'" class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="flex justify-between">
+          <div class="mb-2 -mt-1">
+            <small class="text-medium">Nama Acara</small>
+            <div class="ion-text-capitalize"><b>{{p.permintaan.nama}}</b></div>
+          </div>
+          <div class="mb-2 -mt-1 text-right">
+            <small class="text-medium">Jenis Acara</small>
+            <div class="ion-text-capitalize"><b>{{p.permintaan.jenis}}</b></div>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <div class="mb-2">
+            <small class="text-medium">Tgl Pelaksanaan</small>
+            <div><b>{{p.permintaan.tgl | date:'dd MMMM yyyy'}}</b></div>
+          </div>
+          <div class="mb-2 text-right">
+            <small class="text-medium">Waktu Pelaksanaan</small>
+            <div><b>{{p.permintaan.tgl | date:'hh:mm'}}</b></div>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <div class="mb-2">
+            <small class="text-medium">Cost Center</small>
+            <div><b>{{p.permintaan.costCenter || '-'}}</b></div>
+          </div>
+          <div class="mb-2 text-right">
+            <small class="text-medium">G/L. Account</small>
+            <div><b>{{p.permintaan.costCenter || '-'}}</b></div>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <div class="mb-2">
+            <small class="text-medium">Tempat Acara</small>
+            <div><b>{{p.permintaan.tempat}}</b></div>
+          </div>
+          <div class="mb-2 text-right">
+            <small class="text-medium">Jumlah Peserta</small>
+            <div><b>{{p.permintaan.jumlah}} Orang</b></div>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <div class="mb-2">
+            <small class="text-medium">PIC Acara</small>
+            <div><b>{{p.permintaan.pic}}</b></div>
+          </div>
+          <div class="ion-margin-bottom text-right">
+            <small class="text-medium">No Tlp PIC Acara</small>
+            <div><b>{{p.permintaan.noTlpPic}}</b></div>
+          </div>
+        </div>
+        <div *ngFor="let pk of p.permintaan.kebutuhan; let i = index;" class="ion-padding border rounded-xl ion-margin-bottom">
+          <div class="w-full flex justify-between gap-2">
+            <div class="mb-2 -mt-1">
+              <small class="text-medium">Kebutuhan {{i + 1}}</small>
+              <div class="mb-1 ion-text-capitalize"><b>{{pk.nama}}</b></div>
+            </div>
+            <div class="mb-2 -mt-1 text-right flex-shrink-0">
+              <small class="text-medium">Jumlah</small>
+              <div class="mb-1"><b>{{pk.jumlah}}</b></div>
+            </div>
+          </div>
+          <div class="">
+            <small class="text-medium">Tgl Dibutuhkan</small>
+            <div><b>{{pk.tgl | date:'dd MMMM yyyy'}}</b></div>
+          </div>
+        </div>
+        <div class="">
+          <small class="text-medium">Catatan</small>
+          <div><b>{{p.permintaan.catatan || '-'}}</b></div>
+        </div>
+      </div>
+
+      <!-- DETAIL peralatan =============================================================== -->
+      <div *ngIf="p.kategori == 'peralatan'"
+        class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+        <div class="mb-2 -mt-1">
+          <small class="text-medium">Lokasi Kerja</small>
+          <div><b>{{p.permintaan.alamat}}</b></div>
+        </div>
+        <div class="ion-margin-bottom">
+          <small class="text-medium">Tgl Diperlukan</small>
+          <div><b>{{p.permintaan.tgl | date:'dd MMMM yyyy'}}</b></div>
+        </div>
+        <div *ngFor="let pp of p.permintaan.peralatan; let i = index;" class="ion-padding border rounded-xl ion-margin-bottom">
+          <div *ngIf="pp.nama == 'lainnya'; else bukanLampu">
+            <div class="-mt-1">
+              <small class="text-medium">Nama Keperluan {{i + 1}}</small>
+              <div class="mb-1 ion-text-capitalize"><b>{{pp.nama}}</b></div>
+            </div>
+            <div class="flex justify-between">
+              <div class="">
+                <small class="text-medium">Jumlah</small>
+                <div class="ion-text-capitalize"><b>{{pp.jumlah}} Lampu</b></div>
+              </div>
+              <div class="flex-shrink-0 text-right">
+                <small class="text-medium">Watt</small>
+                <div><b>{{pp.satuan}} Watt</b></div>
+              </div>
+            </div>
+          </div>
+          <ng-template #bukanLampu>
+            <div class="flex justify-between gap-3">
+              <div class="-mt-1">
+                <small class="text-medium">Nama Keperluan {{i + 1}}</small>
+                <div class="ion-text-capitalize"><b>{{pp.nama}}</b></div>
+              </div>
+              <div class="-mt-1 flex-shrink-0 text-right">
+                <small class="text-medium">Jumlah</small>
+                <div class="ion-text-capitalize"><b>{{pp.jumlah}} {{pp.satuan}}</b></div>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+        <div class="">
+          <small class="text-medium">Catatan</small>
+          <div><b>{{p.permintaan.catatan || '-'}}</b></div>
+        </div>
+      </div>
+
+      <!-- Penyetuju =============================================================== -->
+      <div *ngIf="false" class="ion-padding bg-background drop-shadow-md rounded-lg ion-margin-bottom">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex-shrink-0 overflow-hidden" style="height: 50px; width: 50px; border-radius: 100%;">
+            <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+              class="h-full object-cover">
+          </div>
+          <div class="truncate -mb-1">
+            <h5 class="ion-no-margin"><b>Ari Devianto</b></h5>
+            <div class="truncate"><b>Prod. Ops Ast. Manager Pjs</b></div>
+          </div>
+          <div class="flex-shrink-0 -mb-1 text-right">
+            <div class="text-success"><b>Disetujui</b></div>
+            <small>12 Juni 2022</small>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="false" class="ion-padding bg-background drop-shadow-md rounded-lg ion-margin-bottom">
+        <div class="flex items-center justify-between gap-3 ion-margin-bottom">
+          <div class="flex-shrink-0 overflow-hidden" style="height: 50px; width: 50px; border-radius: 100%;">
+            <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+              class="h-full object-cover">
+          </div>
+          <div class="truncate -mb-1">
+            <h5 class="ion-no-margin"><b>Abdul Aziz Yusuf</b></h5>
+            <div class="truncate"><b>Prod. Ops Ast. Manager Pjs</b></div>
+          </div>
+          <div class="flex-shrink-0 -mb-1 text-right">
+            <div class="text-danger"><b>Ditolak</b></div>
+            <small>12 Juni 2022</small>
+          </div>
+        </div>
+        <div>
+          <small class="text-medium">Catatan Revisi</small>
+          <div><b>Ubah Tanggal Pelaksanaan</b></div>
+        </div>
+      </div>
+      <div [ngClass]="'bg-' + p.kategori + '-tint text-' + p.kategori"
+        class="ion-padding text-rdp rounded-xl text-center">
+        <b>Cetak Permintaan</b>
+      </div>
+
+      <div *ngIf="false" class="ion-margin-top grid grid-cols-2 gap-3">
+        <div [ngClass]="'bg-' + p.kategori + '-tint text-' + p.kategori"
+          class="ion-padding text-rdp rounded-xl text-center">
+          <b>Tolak</b>
+        </div>
+        <div [ngClass]="'bg-' + p.kategori + ' text-on-' + p.kategori"
+          class="ion-padding text-rdp rounded-xl text-center">
+          <b>Setuju</b>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

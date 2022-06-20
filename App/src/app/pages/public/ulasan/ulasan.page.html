@@ -1,0 +1,73 @@
+<ion-header class="ion-no-border drop-shadow-md">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="-mr-4">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-bold">
+      Berikan Ulasan
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+    <div class="flex items-center justify-center">
+      <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+        class="h-full object-cover" style="height: 80px; width: 80px; border-radius: 100%;">
+    </div>
+    <div class="text-center">
+      <h4 class="mb-0 mt-3"><b>Mohamad Singgih</b></h4>
+      <div>Engineer</div>
+    </div>
+    <hr class="bg-light mt-2 mb-2">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex-1">
+        <small class="text-medium">No Tlp</small>
+        <div><b>+62 8134762728</b></div>
+      </div>
+      <div class="flex-shrink-0 text-right">
+        <small class="text-medium">Fungsi</small>
+        <div><b>Field Manager</b></div>
+      </div>
+    </div>
+    <hr class="bg-light mt-2 mb-2">
+    <div class="flex items-center justify-between gap-3 mb-2">
+      <div class="flex-1">
+        <small class="text-medium">Jenis Permintaan</small>
+        <div><b>{{kategori.nama}}</b></div>
+      </div>
+      <div [ngClass]="'bg-' + kategori.kode" class="flex p-2 rounded-lg">
+        <img [src]="'assets/icon/' + kategori.kode + '.png'" class="mb-px" style="max-width: 20px; max-height: 20px;">
+      </div>
+    </div>
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex-1">
+        <small class="text-medium">Status</small>
+        <div><b>Menng. Persetujuan Atasan</b></div>
+      </div>
+      <div class="flex-shrink-0 text-right">
+        <small class="text-medium">Tgl Pemesanan</small>
+        <div><b>12 Juni 2022</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ion-padding bg-background drop-shadow-md rounded-xl ion-margin-bottom">
+    <h5 class="ion-text-capitalize text-center mt-0 ion-padding-bottom ion-margin-bottom">
+      <b>Berikan Ulasan & Rating Anda Untuk <br> {{kategori.nama}}</b>
+    </h5>
+    <div class="flex items-center justify-center ion-padding-bottom ion-margin-bottom">
+      <ion-icon *ngFor="let r of [1,1,1,0,0]" name="star" [ngClass]="r? 'text-warning' : 'text-light-shade'"
+        style="font-size: 40pt;"></ion-icon>
+    </div>
+    <ion-item fill="outline" class="item-rounded-xl">
+      <!-- <ion-label position="floating">Ulasan </ion-label> -->
+      <ion-textarea placeholder="Tulis Ulasan Kamu..."></ion-textarea>
+    </ion-item>
+  </div>
+
+  <button [ngClass]="'bg-' + kategori.kode + ' text-on-' + kategori.kode" class="w-full flex items-center justify-center text-center rounded-xl ion-padding relative" (click)="kirim()">
+    <h6 class="ion-no-margin text-bold">Kirim Ulasan</h6>
+    <!-- <ion-spinner [class.opacity-0]="!isLoading" color="light" class="absolute"></ion-spinner> -->
+  </button>
+</ion-content>

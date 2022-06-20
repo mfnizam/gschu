@@ -1,0 +1,92 @@
+<ion-header class="ion-no-border drop-shadow-md">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="-mr-4">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-bold">
+      Detail Akun
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="absolute w-full bg-header"
+    style="height: 130px; z-index: -1; border-radius: 0 0 200% 200%; width: 120vw; left: -10vw; top: 0;"></div>
+
+  <div class="flex items-center justify-center ion-margin-bottom">
+    <div class="relative">
+      <div class="bg-background drop-shadow-md text-primary rounded-full overflow-hidden flex items-center justify-center text-2xl"
+        style="height: 180px; width: 180px;">
+        <b style="font-size: 60pt;">{{inisial}}</b>
+        <!-- <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+          class="h-full object-cover"> -->
+      </div>
+      <div class="absolute bg-background drop-shadow-md rounded-full p-2 flex"
+        style="font-size: 14pt; bottom: 12px; right: 12px;">
+        <ion-icon name="pencil-sharp"></ion-icon>
+      </div>
+    </div>
+  </div>
+  <div class="w-full flex gap-3 items-center justify-between ion-margin-bottom">
+    <div>
+      <small>Nama Lengkap</small>
+      <div class="ion-text-capitalize"><b>{{user.namaLengkap}}</b></div>
+    </div>
+    <div class="text-medium">Ubah</div>
+  </div>
+  <div class="w-full flex gap-3 items-center justify-between ion-margin-bottom">
+    <div>
+      <small>Email</small>
+      <div><b>{{user.email}}</b></div>
+    </div>
+    <div class="text-medium">Ubah</div>
+  </div>
+  <div class="w-full flex gap-3 items-center justify-between ion-margin-bottom">
+    <div>
+      <small>Kata Sandi</small>
+      <div><b>******************</b></div>
+    </div>
+    <div class="text-medium">Ubah</div>
+  </div>
+  <div class="w-full flex gap-3 items-center justify-between ion-margin-bottom">
+    <div>
+      <small>No. Pegawai</small>
+      <div><b>{{user.noPegawai}}</b></div>
+    </div>
+    <div class="text-medium">Ubah</div>
+  </div>
+  <div class="w-full flex gap-3 items-center justify-between ion-margin-bottom">
+    <div>
+      <small>No Tlp</small>
+      <div><b>{{user.kodeNoTlp}} {{user.noTlp}}</b></div>
+    </div>
+    <div class="text-medium">Ubah</div>
+  </div>
+  <div class="w-full flex gap-3 items-center justify-between ion-margin-bottom">
+    <div>
+      <small>Wilayah Kerja</small>
+      <div><b>{{user.wilayahKerja}}</b></div>
+    </div>
+    <div class="text-medium">Ubah</div>
+  </div>
+  <div class="w-full flex gap-3 items-center justify-between ion-margin-bottom">
+    <div>
+      <small>Fungsi</small>
+      <div><b>{{user.fungsi}}</b></div>
+    </div>
+    <div class="text-medium">Ubah</div>
+  </div>
+  <div class="w-full flex gap-3 items-center justify-between ion-margin-bottom">
+    <div>
+      <small>Jabatan</small>
+      <div><b>{{user.jabatan}}</b></div>
+    </div>
+    <div class="text-medium">Ubah</div>
+  </div>
+
+  <div class="ion-padding border border-primary text-primary rounded-xl flex items-center justify-center gap-3"
+    (click)="keluar()">
+    <ion-icon name="exit-outline" style="font-size: 20pt; margin-top: -2pt; margin-bottom: -2pt;"></ion-icon>
+    <b>Keluar Akun</b>
+  </div>
+</ion-content>

@@ -1,7 +1,12 @@
 <ion-header class="ion-no-border drop-shadow-sm">
 	<ion-toolbar>
-		<ion-title class="font-bold">Lupa Kata Sandi</ion-title>
-	</ion-toolbar>
+    <ion-buttons slot="start" class="-mr-4">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-bold">
+      Verifikasi Kode
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" >
@@ -9,7 +14,7 @@
 		<img src="assets/auth/verifikasi.png" class="h-full object-cover">
 	</div>
 	<div class="w-full text-center ion-margin-bottom">
-		<div class="text-medium font-bold text-sm">Masukan Kode Verifikasi.</div>	
+		<div class="text-medium text-bold text-sm" style="width: 280px; margin: auto;">Masukan Kode Verifikasi Yang Telah Dikirim Ke Email Anda.</div>	
 	</div>
 	<div class="flex justify-center items-center w-full ">
 		<ion-list class="bg-none custom-input-verifikasi flex gap-2">
@@ -30,15 +35,19 @@
 
 
 	<div class="w-full text-center ion-margin-bottom">
-		<small class="text-rdp font-bold">Kirim Lagi 30 Detik</small>	
+		<small class="text-rdp text-bold">Kirim Lagi 30 Detik</small>	
 	</div>
 
 
 
 </ion-content>
-<ion-toolbar class="pr-4 pl-4">
-	<button type="submit" class="w-full ion-margin-bottom bg-primary-rdp text-on-primary flex items-center justify-center text-center rounded-2xl ion-padding relative" routerLink="/sandibaru">
-		<h6 class="ion-no-margin font-bold">Verifikasi</h6>
-		<!-- <ion-spinner [class.opacity-0]="!isLoading" color="light" class="absolute"></ion-spinner> -->
-	</button>
-</ion-toolbar>
+<ion-footer class="ion-n">
+	<ion-toolbar>
+		<div class="ion-padding">
+			<div class="w-full bg-primary text-on-primary flex items-center justify-center text-center rounded-xl ion-padding relative" routerLink="/sandibaru">
+				<h6 [class.opacity-0]="isLoading" class="ion-no-margin text-bold">Verifikasi Kode</h6>
+				<ion-spinner [class.opacity-0]="!isLoading" color="light" class="absolute"></ion-spinner>
+			</div>
+		</div>
+	</ion-toolbar>
+</ion-footer>

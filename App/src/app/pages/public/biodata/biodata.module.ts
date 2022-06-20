@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BiodataPageRoutingModule } from './biodata-routing.module';
+import { Routes, RouterModule } from '@angular/router';
 
 import { BiodataPage } from './biodata.page';
+
+const routes: Routes = [{ path: '', component: BiodataPage }];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
-    BiodataPageRoutingModule
+    RouterModule.forChild(routes)
   ],
   declarations: [BiodataPage]
 })

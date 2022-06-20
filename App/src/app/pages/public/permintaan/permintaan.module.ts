@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
+import { Routes, RouterModule } from '@angular/router';
+
 import { PermintaanPage } from './permintaan.page';
 
 const routes: Routes = [{ path: '', component: PermintaanPage }];
@@ -11,7 +15,6 @@ const routes: Routes = [{ path: '', component: PermintaanPage }];
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],

@@ -1,3 +1,13 @@
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+.ion-page{
+  background: var(--ion-background-color, #fff);
+}
+
+* { font-family: 'Nunito', sans-serif; }
+
 // Position
 .fixed { position: fixed; }
 .relative { position: relative; }
@@ -75,6 +85,7 @@
 .mb-2 { margin-bottom: 0.5rem; }
 .mb-3 { margin-bottom: 0.75rem; }
 .mb-4 { margin-bottom: 1rem; }
+.mr-0 { margin-right: 0; }
 .mr-1 { margin-right: 0.25rem; }
 .mr-2 { margin-right: 0.5rem; }
 .mr-3 { margin-right: 0.75rem; }
@@ -113,21 +124,32 @@
 .bg-octonary { background: var(--ion-color-octonary) }
 
 .bg-on-primary { background: var(--ion-color-primary-contrast) }
-.bg-primary-10 { background: rgba($color: var(--ion-color-primary-rgb), $alpha: 0.1);}
-.bg-primary-gradation { background: linear-gradient(45deg, var(--ion-color-primary) 20%, rgba(255,255,255,0) 200%);}
+.bg-gradation { background: linear-gradient(45deg, var(--ion-color-primary) 20%, rgba(255,255,255,0) 200%);}
 
-.bg-primary-rdp { background: var(--ion-color-rdp);}
-.bg-primary-furniture { background: var(--ion-color-furniture);}
-.bg-primary-rumput { background: var(--ion-color-rumput);}
-.bg-primary-ac { background: var(--ion-color-ac);}
-.bg-primary-atk { background: var(--ion-color-atk);}
-.bg-primary-snack { background: var(--ion-color-snack);}
-.bg-primary-krp { background: var(--ion-color-krp);}
-.bg-primary-mess { background: var(--ion-color-mess);}
-.bg-primary-dokumen { background: var(--ion-color-dokumen);}
-.bg-primary-galon { background: var(--ion-color-galon);}
-.bg-primary-acara { background: var(--ion-color-acara);}
-.bg-primary-lampu { background: var(--ion-color-lampu);}
+.bg-rdp { background: var(--ion-color-rdp);}
+.bg-rdp-tint { background: var(--ion-color-rdp-tint) }
+.bg-furniture { background: var(--ion-color-furniture);}
+.bg-furniture-tint { background: var(--ion-color-furniture-tint) }
+.bg-rumput { background: var(--ion-color-rumput);}
+.bg-rumput-tint { background: var(--ion-color-rumput-tint) }
+.bg-ac { background: var(--ion-color-ac);}
+.bg-ac-tint { background: var(--ion-color-ac-tint) }
+.bg-atk { background: var(--ion-color-atk);}
+.bg-atk-tint { background: var(--ion-color-atk-tint) }
+.bg-snack { background: var(--ion-color-snack);}
+.bg-snack-tint { background: var(--ion-color-snack-tint) }
+.bg-krp { background: var(--ion-color-krp);}
+.bg-krp-tint { background: var(--ion-color-krp-tint) }
+.bg-mess { background: var(--ion-color-mess);}
+.bg-mess-tint { background: var(--ion-color-mess-tint) }
+.bg-dokumen { background: var(--ion-color-dokumen);}
+.bg-dokumen-tint { background: var(--ion-color-dokumen-tint) }
+.bg-galon { background: var(--ion-color-galon);}
+.bg-galon-tint { background: var(--ion-color-galon-tint) }
+.bg-acara { background: var(--ion-color-acara);}
+.bg-acara-tint { background: var(--ion-color-acara-tint) }
+.bg-peralatan { background: var(--ion-color-peralatan);}
+.bg-peralatan-tint { background: var(--ion-color-peralatan-tint) }
 
 .bg-light { background: var(--ion-color-light) }
 .bg-light-shade { background: var(--ion-color-light-shade) }
@@ -138,49 +160,49 @@
 .text-grey { color: var(--ion-color-grey) }
 
 .text-rdp { color: var(--ion-color-rdp) }
+.text-on-rdp { color: var(--ion-color-rdp-contrast) }
 .text-rdp-tint { color: var(--ion-color-rdp-tint) }
 .text-furniture { color: var(--ion-color-furniture) }
+.text-on-furniture { color: var(--ion-color-furniture-contrast) }
 .text-furniture-tint { color: var(--ion-color-furniture-tint) }
 .text-rumput { color: var(--ion-color-rumput) }
+.text-on-rumput { color: var(--ion-color-rumput-contrast) }
 .text-rumput-tint { color: var(--ion-color-rumput-tint) }
 .text-ac { color: var(--ion-color-ac) }
+.text-on-ac { color: var(--ion-color-ac-contrast) }
 .text-ac-tint { color: var(--ion-color-ac-tint) }
 .text-snack { color: var(--ion-color-snack) }
+.text-on-snack { color: var(--ion-color-snack-contrast) }
 .text-snack-tint { color: var(--ion-color-snack-tint) }
 .text-atk { color: var(--ion-color-atk) }
+.text-on-atk { color: var(--ion-color-atk-contrast) }
 .text-atk-tint { color: var(--ion-color-atk-tint) }
 .text-krp { color: var(--ion-color-krp) }
+.text-on-krp { color: var(--ion-color-krp-contrast) }
 .text-krp-tint { color: var(--ion-color-krp-tint) }
 .text-mess { color: var(--ion-color-mess) }
+.text-on-mess { color: var(--ion-color-mess-contrast) }
 .text-mess-tint { color: var(--ion-color-mess-tint) }
 .text-dokumen { color: var(--ion-color-dokumen) }
+.text-on-dokumen { color: var(--ion-color-dokumen-contrast) }
 .text-dokumen-tint { color: var(--ion-color-dokumen-tint) }
 .text-galon { color: var(--ion-color-galon) }
+.text-on-galon { color: var(--ion-color-galon-contrast) }
 .text-galon-tint { color: var(--ion-color-galon-tint) }
 .text-acara { color: var(--ion-color-acara) }
+.text-on-acara { color: var(--ion-color-acara-contrast) }
 .text-acara-tint { color: var(--ion-color-acara-tint) }
-.text-lampu { color: var(--ion-color-lampu) }
-.text-lampu-tint { color: var(--ion-color-lampu-tint) }
+.text-peralatan { color: var(--ion-color-peralatan) }
+.text-on-peralatan { color: var(--ion-color-peralatan-contrast) }
+.text-peralatan-tint { color: var(--ion-color-peralatan-tint) }
 
 // Color
 .text-primary { color: var(--ion-color-primary) }
 .text-on-primary { color: var(--ion-color-primary-contrast) }
-.text-secondary { color: var(--ion-color-secondary) }
-.text-on-secondary { color: var(--ion-color-secondary-contrast) }
-.text-tertiary { color: var(--ion-color-tertiary) }
-.text-on-tertiary { color: var(--ion-color-tertiary-contrast) }
-.text-quaternary { color: var(--ion-color-quaternary) }
-.text-on-quaternary { color: var(--ion-color-quaternary-contrast) }
-.text-quinary { color: var(--ion-color-quinary) }
-.text-on-quinary { color: var(--ion-color-quinary-contrast) }
-.text-senary { color: var(--ion-color-senary) }
-.text-on-senary { color: var(--ion-color-senary-contrast) }
-.text-septenary { color: var(--ion-color-septenary) }
-.text-on-septenary { color: var(--ion-color-septenary-contrast) }
-.text-octonary { color: var(--ion-color-octonary) }
-.text-on-octonary { color: var(--ion-color-octonary-contrast) }
-
 .text-medium { color: var(--ion-color-medium) }
+.text-light-shade { color: var(--ion-color-light-shade) }
+.text-success { color: var(--ion-color-success) }
+.text-warning { color: var(--ion-color-warning) }
 .text-danger { color: var(--ion-color-danger) }
 
 // Display
@@ -206,6 +228,7 @@
 .self-end { align-self: flex-end; }
 .gap-2 { gap: 0.5rem; }
 .gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
 .gap-5 { gap: 1.25rem; }
 
 // Grid
@@ -237,14 +260,6 @@
 .leading-relaxed{ line-height: 1.625;}
 .whitespace-pre-wrap{ white-space: pre-wrap;}
 .whitespace-nowrap{ white-space: nowrap;}
-// Font
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
-*{
-	font-family: 'Nunito', sans-serif;
-}
-.font-bold	{ font-weight: bold; }
-// .font-extrabold	{ font-weight: 800; }
 .uppercase{text-transform: uppercase;}	
 .lowercase{text-transform: lowercase;}	
 .capitalize{text-transform: capitalize;}	
@@ -254,12 +269,15 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box; /* 1 */
-  border-width: 0; /* 2 */
-  border-style: solid; /* 2 */
-  border-color: var(--ion-color-light-shade); /* 2 */
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--ion-color-light-shade);
+  --border-color: var(--ion-color-light-shade);
 }
 .border { border-width: 1px; }
+.border-l { border-left: 1px solid; }
+.border-r { border-right: 1px solid; }
 .border-t-3 { border-top-width: 3px; }
 .border-primary { border-color: var(--ion-color-primary); }
 .rounded-md	{ border-radius: 0.375rem; }
@@ -271,8 +289,10 @@
 .rounded-tr-xl	{ border-top-right-radius: 0.75rem; }
 .rounded-bl-xl	{ border-bottom-left-radius: 0.75rem; }
 .rounded-br-xl	{ border-bottom-right-radius: 0.75rem; }
+.border-solid { border-style: solid; }
 
 // Opacity
+.opacity-0 { opacity: 0; }
 .opacity-50 { opacity: .5; }
 
 // Image
@@ -281,14 +301,65 @@
 .object-right { object-position: right; }
 
 // Shadow
-.drop-shadow-sm {filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));}
-.drop-shadow-md	{ filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06)); }
-.drop-shadow-lg	{ filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)); }
-.drop-shadow-xl	{ filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08)); }
-.drop-shadow-2xl { filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15)); }
-.drop-shadow-custom	{ filter: drop-shadow(0 0px 0px rgba(0, 0, 0, 0.01)) drop-shadow(0 0px 5px rgba(0, 0, 0, 0.1)); }
+.drop-shadow-sm {filter: drop-shadow(0 0px 1px rgb(0 0 0 / 0.05));}
+.drop-shadow-md	{ filter: drop-shadow(0 0px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06)); }
+.drop-shadow-lg	{ filter: drop-shadow(0 0px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)); }
+.drop-shadow-xl	{ filter: drop-shadow(0 0px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08)); }
+.drop-shadow-2xl { filter: drop-shadow(0 0px 25px rgb(0 0 0 / 0.15)); }
+
+// Swiper Component
+.swiper-px { padding-left: var(--ion-padding, 16px) !important; padding-right: var(--ion-padding, 16px) !important; }
+
+// Other
+*::-webkit-scrollbar {
+	background: transparent;
+	display: none;
+	width: 0;
+}
+
+.skeleton .animate{
+	position: relative;
+	overflow: hidden;
+	
+	&::after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		transform: translateX(-100%);
+		background: linear-gradient(90deg, transparent, var(--background), transparent);
+	
+		/* Adding animation */
+		animation: loading 1s infinite;
+	}
+}
+@keyframes loading {
+	100% { transform: translateX(100%); }
+}
+
+// ==============================================================================================================================
 
 // Ionic Component
+.modal-bottom-custom{
+	align-items: flex-end;
+	
+	&::part(content){
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+}
+.modal-konfirmasi{
+  --height: auto;
+  &::part(content){
+    background: none !important;
+  }
+
+  .ion-page{
+    position: relative;
+    display: contents;
+  }
+}
 .segment-custom{
 	background: var(--ion-color-primary-contrast) !important;
 	color: var(--ion-color-primary);
@@ -312,32 +383,89 @@
 	border-radius: 0.375rem;
 	height: 100%;
 }
-
-// Swiper Component
-.swiper-px { padding-left: var(--ion-padding, 16px) !important; padding-right: var(--ion-padding, 16px) !important; }
-
-// Other
-*::-webkit-scrollbar {
-	background: transparent;
-	display: none;
-	width: 0;
-}
-
-.item-rounded-2xl::part(native){
-	border-radius: 1rem;
+.item-rounded-xl::part(native){
+	border-radius: .75rem;
 	height: 100%;
 }
-
-// ==============================================================================================================================
-
-.modal-bottom-custom{
-	align-items: flex-end;
-	
-	&::part(content){
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-	}
+.item-opacity-100{
+  ion-label{ opacity: 1 !important; }
+  input{ opacity: 1 !important; }
+}
+.item-rdp {
+  ion-item { --highlight-color-focused: var(--ion-color-rdp); --highlight-color-valid: var(--ion-color-rdp); }
+  .item-has-focus ion-label{ color: var(--ion-color-rdp) !important; }
+  --ion-color-primary: var(--ion-color-rdp);
+}
+.item-furniture {
+  ion-item { --highlight-color-focused: var(--ion-color-furniture); --highlight-color-valid: var(--ion-color-furniture); }
+  .item-has-focus ion-label{ color: var(--ion-color-furniture) !important; }
+  --ion-color-primary: var(--ion-color-furniture);
+}
+.item-rumput {
+  ion-item { --highlight-color-focused: var(--ion-color-rumput); --highlight-color-valid: var(--ion-color-rumput); }
+  .item-has-focus ion-label{ color: var(--ion-color-rumput) !important; }
+  --ion-color-primary: var(--ion-color-rumput);
+}
+.item-ac {
+  ion-item { --highlight-color-focused: var(--ion-color-ac); --highlight-color-valid: var(--ion-color-ac); }
+  .item-has-focus ion-label{ color: var(--ion-color-ac) !important; }
+  --ion-color-primary: var(--ion-color-ac);
+}
+.item-atk {
+  ion-item { --highlight-color-focused: var(--ion-color-atk); --highlight-color-valid: var(--ion-color-atk); }
+  .item-has-focus ion-label{ color: var(--ion-color-atk) !important; }
+  --ion-color-primary: var(--ion-color-atk);
+}
+.item-snack {
+  ion-item { --highlight-color-focused: var(--ion-color-snack); --highlight-color-valid: var(--ion-color-snack); }
+  .item-has-focus ion-label{ color: var(--ion-color-snack) !important; }
+  --ion-color-primary: var(--ion-color-snack);
+}
+.item-krp {
+  ion-item { --highlight-color-focused: var(--ion-color-krp); --highlight-color-valid: var(--ion-color-krp); }
+  .item-has-focus ion-label{ color: var(--ion-color-krp) !important; }
+  --ion-color-primary: var(--ion-color-krp);
+}
+.item-mess {
+  ion-item { --highlight-color-focused: var(--ion-color-mess); --highlight-color-valid: var(--ion-color-mess); }
+  .item-has-focus ion-label{ color: var(--ion-color-mess) !important; }
+  --ion-color-primary: var(--ion-color-mess);
+}
+.item-dokumen {
+  ion-item { --highlight-color-focused: var(--ion-color-dokumen); --highlight-color-valid: var(--ion-color-dokumen); }
+  .item-has-focus ion-label{ color: var(--ion-color-dokumen) !important; }
+  --ion-color-primary: var(--ion-color-dokumen);
+}
+.item-galon {
+  ion-item { --highlight-color-focused: var(--ion-color-galon); --highlight-color-valid: var(--ion-color-galon); }
+  .item-has-focus ion-label{ color: var(--ion-color-galon) !important; }
+  --ion-color-primary: var(--ion-color-galon);
+}
+.item-acara {
+  ion-item { --highlight-color-focused: var(--ion-color-acara); --highlight-color-valid: var(--ion-color-acara); }
+  .item-has-focus ion-label{ color: var(--ion-color-acara) !important; }
+  --ion-color-primary: var(--ion-color-acara);
+}
+.item-peralatan {
+  ion-item { --highlight-color-focused: var(--ion-color-peralatan); --highlight-color-valid: var(--ion-color-peralatan); }
+  .item-has-focus ion-label{ color: var(--ion-color-peralatan) !important; }
+  --ion-color-primary: var(--ion-color-peralatan);
+}
+.modal-date-sheet-custom{
+	&::part(content){ width: 100%; }
+}
+.modal-time-sheet-custom{
+  &::part(content){ width: 100%; }
+  
+  ion-datetime {
+    ion-picker-internal:host{
+      height: 250px !important;
+    }
+    // .picker-item {
+    //   height: 54px !important;
+    //   line-height: 54px !important;
+    // }
+  }
 }
 
 
@@ -346,8 +474,6 @@
 	background-position: center;
     background-size: cover;   
 }
-
-
 
 .custom-input-verifikasi{
 	width: 250px;
@@ -407,103 +533,5 @@
     }
     .item-fill-outline.ion-focused.label-floating.sc-ion-label-md-h::before, .item-fill-outline.ion-focused .label-floating.sc-ion-label-md-h::before, .item-fill-outline.ion-focused.label-floating.sc-ion-label-md-h::after, .item-fill-outline.ion-focused .label-floating.sc-ion-label-md-h::after, .item-fill-outline.item-has-focus.label-floating.sc-ion-label-md-h::before, .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h::before, .item-fill-outline.item-has-focus.label-floating.sc-ion-label-md-h::after, .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h::after, .item-fill-outline.item-has-placeholder.sc-ion-label-md-h:not(.item-input).label-floating::before, .item-fill-outline.item-has-placeholder:not(.item-input) .label-floating.sc-ion-label-md-h::before, .item-fill-outline.item-has-placeholder.sc-ion-label-md-h:not(.item-input).label-floating::after, .item-fill-outline.item-has-placeholder:not(.item-input) .label-floating.sc-ion-label-md-h::after, .item-fill-outline.item-has-value.label-floating.sc-ion-label-md-h::before, .item-fill-outline.item-has-value .label-floating.sc-ion-label-md-h::before, .item-fill-outline.item-has-value.label-floating.sc-ion-label-md-h::after, .item-fill-outline.item-has-value .label-floating.sc-ion-label-md-h::after{
       width: 0px;
-    }
-}
-
-
-.input-rdp{
-	ion-item{
-      --highlight-background:var(--ion-color-rdp);
-    }
-    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
-      background-color: var(--ion-color-rdp) ;
-    }
-}
-.input-furniture{
-	ion-item{
-      --highlight-background:var(--ion-color-furniture);
-    }
-    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
-      background-color: var(--ion-color-furniture) ;
-    }
-}
-.input-rumput{
-	ion-item{
-      --highlight-background:var(--ion-color-rumput);
-    }
-    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
-      background-color: var(--ion-color-rumput) ;
-    }
-}
-.input-ac{
-	ion-item{
-      --highlight-background:var(--ion-color-ac);
-    }
-    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
-      background-color: var(--ion-color-ac) ;
-    }
-}
-.input-atk{
-	ion-item{
-      --highlight-background:var(--ion-color-atk);
-    }
-    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
-      background-color: var(--ion-color-rdp) ;
-    }
-}
-.input-krp{
-	ion-item{
-      --highlight-background:var(--ion-color-krp);
-    }
-    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
-      background-color: var(--ion-color-krp) ;
-    }
-}
-.input-snack{
-	ion-item{
-      --highlight-background:var(--ion-color-snack);
-    }
-    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
-      background-color: var(--ion-color-snack) ;
-    }
-}
-.input-mess{
-	ion-item{
-      --highlight-background:var(--ion-color-mess);
-    }
-    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
-      background-color: var(--ion-color-mess) ;
-    }
-}
-.input-dokumen{
-	ion-item{
-      --highlight-background:var(--ion-color-dokumen);
-    }
-    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
-      background-color: var(--ion-color-dokumen) ;
-    }
-}
-.input-galon{
-	ion-item{
-      --highlight-background:var(--ion-color-galon);
-    }
-    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
-      background-color: var(--ion-color-galon) ;
-    }
-}
-.input-acara{
-	ion-item{
-      --highlight-background:var(--ion-color-acara);
-    }
-    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
-      background-color: var(--ion-color-acara) ;
-    }
-}
-.input-lampu{
-	ion-item{
-      --highlight-background:var(--ion-color-lampu);
-    }
-    .item-fill-outline.item-has-focus .label-floating.sc-ion-label-md-h{
-      background-color: var(--ion-color-lampu) ;
     }
 }

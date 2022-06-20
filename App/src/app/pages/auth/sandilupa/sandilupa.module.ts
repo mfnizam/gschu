@@ -4,16 +4,18 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SandilupaPageRoutingModule } from './sandilupa-routing.module';
+import { Routes, RouterModule } from '@angular/router';
 
 import { SandilupaPage } from './sandilupa.page';
+
+const routes: Routes = [{ path: '', component: SandilupaPage }];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SandilupaPageRoutingModule
+    RouterModule.forChild(routes)
   ],
   declarations: [SandilupaPage]
 })

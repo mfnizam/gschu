@@ -1,0 +1,34 @@
+<ion-header class="ion-no-border drop-shadow-md">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="-mr-4">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-bold">
+      Notifikasi
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-start ion-padding-end">
+  <ion-refresher slot="fixed" (ionRefresh)="ambilNotifikasi($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="notifikasi && notifikasi.length > 0; else noNotifikasi">
+    <ion-list>
+      <ion-item *ngFor="let not of notifikasi" style="--padding-start: 0px;">
+        <div class="flex items-start gap-3 ion-margin-top ion-margin-bottom">
+          <div class="flex bg-furniture text-on-primary p-2 rounded-lg rounded-lg">
+            <img src="assets/icon/furniture.png" class="mb-px" style="max-width: 20px; max-height: 20px;">
+          </div>
+          <div>
+            <h5 class="ion-no-margin"><b>Disetujui - General Service</b></h5>
+            <div>Permintaan Perbaikan RDP & Fasum anda telah disetujui oleh General Service</div>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ng-template #noNotifikasi>
+    <div class="ion-margin-top ion-padding border rounded-xl text-center text-medium">Tidak ada notifikasi untuk anda.</div>
+  </ng-template>
+</ion-content>

@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sandibaru',
-  templateUrl: './sandibaru.page.html',
-  styleUrls: ['./sandibaru.page.scss'],
+  templateUrl: './sandibaru.page.html'
 })
-export class SandibaruPage implements OnInit {
+export class SandibaruPage {
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }
